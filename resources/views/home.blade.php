@@ -2,22 +2,25 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID Surat</th>
+        <th scope="col">Pemohon</th>
+        <th scope="col">Jenis Surat</th>
+        <th scope="col"> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Vincent Marcello Dwi Tanujaya</td>
+        <td>Surat keterangan beasiswa</td>
+        <td><button type="button" class="btn btn-success btn-sm">Rincian</button>
+            <button type="button" class="btn btn-danger btn-sm mx-2">Tolak</button> </td>
+      </tr>
+      
+    </tbody>
+  </table>
 </div>
 @endsection
