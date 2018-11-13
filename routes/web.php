@@ -15,10 +15,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/coba', function () {
-    return view('coba');
+Route::get('/coba2', function () {
+    return view('user/coba2');
 });
 
+<<<<<<< HEAD
+Route::get('/coba3', function () {
+    return view('user/pencariansurat');
+});
+
+Route::get('/keteranganaktif', function () {
+    return view('user/skam');
+});
+
+Route::get('/kerjapraktik', function () {
+    return view('user/kerjapraktik');
+});
+
+
+
+
+=======
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -26,3 +43,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+>>>>>>> 7838c7cff833dc32d1ba269cb19fc2a926616cb6
