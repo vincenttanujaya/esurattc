@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -33,8 +33,8 @@
             <header class="site-header">
                     <div class="container-fluid">
                         <a href="#" class="site-logo">
-                            <img class="hidden-md-down" src="img/logo-2.png" alt="">
-                            <img class="hidden-lg-down" src="img/logo-2-mob.png" alt="">
+                            <img class="hidden-md-down" src="img/logoits.jpg" alt="">
+                            <img class="hidden-lg-down" src="img/logoits.jpg" alt="">
                         </a>
                 
                         <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
@@ -420,7 +420,7 @@
                         </div><!--.site-header-content-->
                     </div><!--.container-fluid-->
                 </header><!--.site-header-->
-
+                
                 <nav class="side-menu">
                         <ul class="side-menu-list">
                             <li class="grey with-sub">
