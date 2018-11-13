@@ -15,7 +15,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/coba', function () {
-    return view('coba');
+Route::get('/coba2', function () {
+    return view('user/coba2');
 });
+
+Route::get('/coba3', function () {
+    return view('user/pencariansurat');
+});
+
+Route::get('/keteranganaktif', function () {
+    return view('user/skam');
+});
+
+Route::get('/kerjapraktik', function () {
+    return view('user/kerjapraktik');
+});
+
+
+
 
