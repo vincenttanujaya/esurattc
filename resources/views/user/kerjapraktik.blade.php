@@ -60,17 +60,19 @@
 	</div>  
 	<div class="box-typical box-typical-padding">      
 		<div class="row">
-
 			<div class="col-lg-4">
 				<div data-role="dynamic-fields">
-				<div class="form-inline">
-				<div class="form-group">
-					<input type="text" class="form-control" name="jumlah_barang[]" id="field-value">
-					<button type="button" class="btn btn-inline btn-success" data-role="add">Success</button>
-					<button type="button" class="btn btn-inline btn-danger" data-role="remove">Danger</button>		
-				</div>				
-				
-				</div>
+					<div class="form-inline">					
+						<div class="form-group input-group">
+							<input type="text" class="form-control" aria-label="Text input with 	dropdown button">
+							<div class="input-group-append">
+								<button type="button" class="btn btn-success"  data-role="add">	Add
+								</button>
+								<button type="button" class="btn btn-danger"  data-role="remove"	>Remove
+								</button>
+							</div>
+						</div>			
+					</div>
 				</div>
 			</div>
 			
@@ -80,6 +82,7 @@
 @section('script')
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script type="text/javascript">
+	var counter = 1;	
 	$(document).on(
 		'click',
 		'[data-role="dynamic-fields"] > .form-inline [data-role="remove"]',
@@ -99,6 +102,7 @@
 				$(this).val('');
 			});
 			container.append(new_field_group);
+			
 		}
 	);
 </script>
