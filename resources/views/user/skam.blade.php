@@ -25,6 +25,12 @@
 						</div>
 					</div>
 					<div class="form-group row">
+						<label for="inputPassword" class="col-sm-2 form-control-label">NRP</label>
+						<div class="col-sm-10">
+							<input type="Text" class="form-control" id="inputPassword" placeholder="NRP Mahasiswa">
+						</div>
+					</div>
+					<div class="form-group row">
 						<label for="inputPassword" class="col-sm-2 form-control-label">Tempat, Tanggal Lahir</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="inputPassword" placeholder="Tempat, Tanggal Lahir">
@@ -66,8 +72,10 @@
 							<input class="flatpickr form-control" id="flatpickr" type="text" placeholder="Select Date.."  data-date-format="d-m-Y">
 						</div>
 					</div>
-					<div class="form-group">
-						<button type="button" class="btn btn-rounded btn-inline">Ajukan</button>
+					<div class="row text-right">
+						<div class="col-md-12">
+							<button type="button" class="btn btn-rounded btn-inline">Ajukan</button>
+						</div>
 					</div>
 				</form>
 			</div>

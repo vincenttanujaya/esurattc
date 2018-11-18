@@ -39,6 +39,14 @@ Route::get('/rekomlomba', function () {
     return view('user/rekomlomba');
 });
 
+Route::get('/permohonandatalomba', function () {
+    return view('user/permohonandatalomba');
+});
+
+Route::get('/permohonandatatugas', function () {
+    return view('user/permohonandatatugas');
+});
+
 
 
 

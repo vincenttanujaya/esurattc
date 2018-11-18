@@ -14,7 +14,7 @@
 			</div>
 		</div>
 	</header>
-	<div class="box-typical box-typical-padding">
+	<div class="box-typical box-typical-padding" style="overflow: auto;">
 		<div class="row">
 			<div class="col-md-12">
 				<table id="example" class="display table table-striped table-bordered" 	cellspacing="0" width="100%">

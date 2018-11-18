@@ -50,8 +50,10 @@
 							<input class="flatpickr form-control" id="flatpickr" type="text" placeholder="Pilih Tanggal"  data-date-format="d-m-Y">
 						</div>
 					</div>
-					<div class="form-group">
-						<button type="button" class="btn btn-rounded btn-inline">Ajukan</button>
+					<div class="row text-right">
+						<div class="col-md-12">
+							<button type="button" class="btn btn-rounded btn-inline">Ajukan</button>
+						</div>
 					</div>
 				</form>
 			</div>

@@ -65,9 +65,9 @@
 	                                <a class="dropdown-item"  href="rekomlomba">Rekomendasi Mengikuti Lomba</a>
 	                                <a class="dropdown-item"  href="rekombeasiswa">Rekomendasi Mendaftar Beasiswa</a>
 	                                <a class="dropdown-item"  href="kerjapraktik">Permohonan Kerja Praktik</a>
-	                                <a class="dropdown-item"  href="#">Permohonan Bantuan Dana Lomba/Kegiatan</a>
-	                                <a class="dropdown-item"  href="#">Permohonan Bantuan Data Untuk Tugas Kuliah</a>
-	                                <a class="dropdown-item"  href="#">Lain-lain</a>
+	                                <a class="dropdown-item"  href="permohonandatalomba">Permohonan Bantuan Data Untuk Lomba/Kegiatan</a>
+	                                <a class="dropdown-item"  href="permohonandatatugas">Permohonan Bantuan Data Untuk Tugas Kuliah</a>
+	                                <a class="dropdown-item"  href="lainlain">Lain-lain</a>
 	                            </div>
 	                        </div>
 	                        <div class="dropdown dropdown-typical">

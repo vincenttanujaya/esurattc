@@ -5,10 +5,10 @@
 			<div class="tbl">
 				<div class="tbl-row">
 					<div class="tbl-cell">
-						<h3>Surat Permohonan Kerja Praktik</h3>
+						<h3>Surat Permohonan Bantuan Data untuk Lomba/Kegiatan</h3>
 						<ol class="breadcrumb breadcrumb-simple">
 							<li><a href="/">E-Surat | IF</a></li>
-							<li class="active">Surat Permohonan Kerja Praktik</li>
+							<li class="active">Surat Permohonan Bantuan Data untuk Lomba/Kegiatan</li>
 						</ol>
 					</div>
 				</div>
@@ -17,7 +17,8 @@
 	<div class="box-typical box-typical-padding">      
 		<div class="row">
 			<div class="col-md-12">
-				<form>					
+				<form>
+					
 					<div class="form-group row">
 						<label for="inputPassword" class="col-sm-2 form-control-label">Nama Pengaju</label>
 						<div class="col-sm-10">
@@ -33,25 +34,37 @@
 					<div class="form-group row">
 						<label for="inputPassword" class="col-sm-2 form-control-label">Tanggal Dibutuhkannya Surat</label>
 						<div class="col-sm-10">
-							<input class="flatpickr form-control" id="flatpickr" type="text" placeholder="Masukkan Tanggal"  data-date-format="d-m-Y">
+							<input class="flatpickr form-control" id="flatpickr" type="text" placeholder="Pilih Tanggal"  data-date-format="d-m-Y">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="inputPassword" class="col-sm-2 form-control-label">Pihak Ditujukannya Surat</label>
+						<label for="inputPassword" class="col-sm-2 form-control-label">Nama Kegiatan/Lomba</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputPassword" placeholder="Pihak Ditujukannya Surat">
+							<input type="text" class="form-control" id="inputPassword" placeholder="Nama Kegiatan/Lomba">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="inputPassword" class="col-sm-2 form-control-label">Instansi</label>
+						<label for="inputPassword" class="col-sm-2 form-control-label">Judul Karya Ilmiah</label>
 						<div class="col-sm-10">
-							<input type="Text" class="form-control" id="inputPassword" placeholder="Instansi">
+							<input type="Text" class="form-control" id="inputPassword" placeholder="Judul Karya Ilmiah">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="inputPassword" class="col-sm-2 form-control-label">Tanggal Mulai Kerja Praktik</label>
+						<label for="inputPassword" class="col-sm-2 form-control-label">Instansi Tujuan</label>
 						<div class="col-sm-10">
-							<input type="Text" class="form-control" id="inputPassword" placeholder="Tanggal Mulai Kerja Praktik">
+							<input type="Text" class="form-control" id="inputPassword" placeholder="Instansi Tujuan">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="inputPassword" class="col-sm-2 form-control-label">Alamat Instansi</label>
+						<div class="col-sm-10">
+							<input type="Text" class="form-control" id="inputPassword" placeholder="Alamat Instansi">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="inputPassword" class="col-sm-2 form-control-label">Jenis Data yang Dibutuhkan</label>
+						<div class="col-sm-10">
+							<input type="Text" class="form-control" id="inputPassword" placeholder="Jenis Data yang Dibutuhkan">
 						</div>
 					</div>
 				</form>
@@ -89,7 +102,7 @@
 				<button type="button" class="btn btn-rounded btn-inline">Ajukan</button>
 			</div>
 		</div>  
-	</div>          
+	</div>
 @endsection
 @section('script')
 <script type="text/javascript">
