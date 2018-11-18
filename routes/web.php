@@ -19,7 +19,7 @@ Route::get('/coba2', function () {
     return view('user/coba2');
 });
 
-Route::get('/coba3', function () {
+Route::get('/carisurat', function () {
     return view('user/pencariansurat');
 });
 
@@ -30,6 +30,15 @@ Route::get('/keteranganaktif', function () {
 Route::get('/kerjapraktik', function () {
     return view('user/kerjapraktik');
 });
+
+Route::get('/rekombeasiswa', function () {
+    return view('user/rekombeasiswa');
+});
+
+Route::get('/rekomlomba', function () {
+    return view('user/rekomlomba');
+});
+
 
 
 
