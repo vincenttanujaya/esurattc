@@ -24,23 +24,24 @@
             <thead>
                 <tr>
                     <th>Atribut Surat</th>
-                    <th>Keterangan</th>                        
+                    <th>Aksi</th>                        
                 </tr>
             </thead>
             <tbody>
                     @foreach($atributsurat as $item)                       
-                    <tr>
-                        <td>{{$item->nama_atribut}}</td> 
+                    <tr id="attribut{{$item->id_atribut}}">
+                        <td>
+                            {{$item->nama_atribut}}
+                        </td> 
                         <td>
                             <button type="button" class="btn btn-inline btn-warning btn-sm"><i class="fa fa-edit"></i>
                             <button type="button" class="btn btn-inline btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal"><i class="font-icon-trash"></i></button>
                         </td>                               
-                        </tr>
+                    </tr>
                     @endforeach    
             </tbody>
         </table>
 </div>
-
 
 @endsection
 

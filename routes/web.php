@@ -48,10 +48,14 @@ Route::get('/permohonandatatugas', function () {
 });
 
 
-
 Route::get('/testnya', 'HomeController@testhalaman');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/tambahatribut','AtributsuratController@create');
+Route::get('/atributsurat', 'AtributsuratController@showatribut');
+Route::get('/pejabat', 'PejabatController@showPejabat');
+Route::post('/tambahpejabat', 'PejabatController@tambahPejabat');
