@@ -59,3 +59,6 @@ Route::post('/tambahatribut','AtributsuratController@create');
 Route::get('/atributsurat', 'AtributsuratController@showatribut');
 Route::get('/pejabat', 'PejabatController@showPejabat');
 Route::post('/tambahpejabat', 'PejabatController@tambahPejabat');
+Route::post('/deletepejabat/{id}', 'PejabatController@deletePejabat');
+Route::post('/editpejabat/{id}', 'PejabatController@editPejabat');
+Route::get('/deletepejabat2', 'PejabatController@deletePejabat2');
