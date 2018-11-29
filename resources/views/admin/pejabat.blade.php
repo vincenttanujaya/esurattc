@@ -65,7 +65,8 @@
 					    </tr>
 					</tfoot>
 					<tbody>
-                        @foreach($pejabat as $item)                       
+                        @foreach($pejabat as $item)    
+                                         
 					        <tr>
                                 <td>{{$counter++}}.</td>
 					        	<td>{{$item->nama_pejabat}}</td>
@@ -73,7 +74,10 @@
                                 <td>{{$item->jabatan}}</td> 
                                 <td>
                                     <button type="button" class="btn btn-inline btn-warning btn-sm"><i class="fa fa-edit"></i>
-                                    <button type="button" class="btn btn-inline btn-danger btn-sm"  href="{{{ URL::to('deletepejabat/'.$item->id_pejabat) }}}"><i class="font-icon-trash"></i></button>
+                                    <form action="{{url('/deletepejabat/'.$item->id_pejabat)}}" method="POST")> 
+                                        @csrf
+                                        <button type="submit" class="btn btn-inline btn-danger btn-sm"><i class="font-icon-trash"></i></button>
+                                    </form>
                                 </td>                               
                             </tr>
                         @endforeach				
