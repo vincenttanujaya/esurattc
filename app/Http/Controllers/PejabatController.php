@@ -31,7 +31,7 @@ class PejabatController extends Controller
     }
 
     public function deletePejabat($id){
-        $pejabat = App\Pejabat::find($id);
+        $pejabat = Pejabat::find($id);
         $pejabat->delete();
         return redirect('/pejabat');
 
