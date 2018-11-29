@@ -49,6 +49,7 @@ Route::get('/permohonandatatugas', function () {
 
 
 
+Route::get('/testnya', 'HomeController@testhalaman');
 
 
 Auth::routes();

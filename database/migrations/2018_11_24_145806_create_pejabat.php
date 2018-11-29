@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePesertaTable extends Migration
+class CreatePejabat extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreatePesertaTable extends Migration
      */
     public function up()
     {
-        Schema::create('peserta', function (Blueprint $table) {
-            $table->increments('id_peserta');
-            $table->integer('id_js');
-            $table->string('nama_peserta');
-            $table->string('nrp_peserta');
+        Schema::create('pejabat', function (Blueprint $table) {
+            $table->increments('id_pejabat');
+            $table->string('nama_pejabat');
+            $table->string('nip_pejabat');
+            $table->string('jabatan');
+            
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreatePesertaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('peserta');
+        Schema::dropIfExists('pejabat');
     }
 }
