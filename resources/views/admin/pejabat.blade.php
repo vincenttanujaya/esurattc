@@ -108,12 +108,14 @@
         </div>
     </div>
 </div>
-<script>
-    $(function() {
-        $('#pejabat').DataTable({
-        });
-    });
-</script>
+@endsection
 
+@section('dtable')
+    <script>
+        $(function() {
+            $('#pejabat').DataTable({
+            });
+        });
+    </script>
 @endsection
 
