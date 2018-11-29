@@ -213,12 +213,6 @@
     
     <script src="js/app.js"></script>
     <script src="js/lib/datatables-net/datatables.min.js"></script>
-    <script>
-        $(function() {
-            $('#pejabat').DataTable({
-            });
-        });
-    </script>
-
+    @yield('dtable')
     </body>
     </html>

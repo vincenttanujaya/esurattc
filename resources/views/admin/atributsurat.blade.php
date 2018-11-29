@@ -40,15 +40,16 @@
             </tbody>
         </table>
 </div>
-<script src="js/lib/datatables-net/datatables.min.js"></script>
-<script>
-     $(function() {
-        $('#atribut').DataTable({
-        });
-    });
-</script>
 
 
 @endsection
 
+@section('dtable')
+    <script>
+        $(function() {
+           $('#atribut').DataTable({
+           });
+       });
+   </script>    
+@endsection
 
