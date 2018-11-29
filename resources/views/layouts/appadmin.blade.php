@@ -23,11 +23,15 @@
     <link rel="stylesheet" href="css/separate/vendor/lobipanel.min.css">
     <link rel="stylesheet" href="css/lib/jqueryui/jquery-ui.min.css">
     <link rel="stylesheet" href="css/separate/pages/widgets.min.css">
-        <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
-        <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/lib/datatables-net/datatables.min.css">
+	<link rel="stylesheet" href="css/separate/vendor/datatables-net.min.css">
+    >
+
     </head>
-    <body class="with-side-menu theme-rebecca-purple">
+    <body class="with-side-menu wet-aspalt-theme">
     
         <header class="site-header">
             <div class="container-fluid">
@@ -208,5 +212,13 @@
         </script>
     
     <script src="js/app.js"></script>
+    <script src="js/lib/datatables-net/datatables.min.js"></script>
+    <script>
+        $(function() {
+            $('#pejabat').DataTable({
+            });
+        });
+    </script>
+
     </body>
     </html>
