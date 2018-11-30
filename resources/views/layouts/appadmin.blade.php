@@ -73,33 +73,26 @@
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <li class="grey">
-                    <a href="#">
+                    <a href="permohonansurat">
                         <i class="font-icon font-icon-notebook"></i>
                         <span class="lbl">Permohonan</span>
                     </a>
+                </li>
+                <li class="grey with-sub">
+                    <span>
+                        <span class="font-icon font-icon-burger"></span>
+                        <span class="lbl">Template Surat</span>
+                    </span>
+                    <ul>
+                        <li><a href="jenissurat"><span class="lbl">Jenis Surat</span></a></li>
+                        <li><a href="atributsurat"><span class="lbl">Atribut Surat</span></a></li>
+                        <li><a href="pejabat"><span class="lbl">Pejabat</span></a></li>
+                    </ul>
                 </li>
                 <li class="grey">
                     <a href="#">
                         <i class="font-icon font-icon-zigzag"></i>
                         <span class="lbl">Riwayat</span>
-                    </a>
-                </li>
-                <li class="grey">
-                    <a href="#">
-                        <i class="font-icon font-icon-doc"></i>
-                        <span class="lbl">Template</span>
-                    </a>
-                </li>
-                <li class="grey">
-                    <a href="#">
-                        <i class="font-icon font-icon-user"></i>
-                        <span class="lbl">Pejabat</span>
-                    </a>
-                </li>
-                <li class="grey">
-                    <a href="#">
-                        <i class="font-icon font-icon-edit"></i>
-                        <span class="lbl">Atribut Surat</span>
                     </a>
                 </li>
             </ul>

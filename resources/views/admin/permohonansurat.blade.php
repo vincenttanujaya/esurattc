@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-left">
-                            <h5>STATUS SURAT</h5>
+                            <h5>PERMINTAAN SURAT</h5>
                         </div>
                         <table id="" class="display table table-striped table-bordered" 	cellspacing="0" width="100%">
                             <thead>
@@ -14,9 +14,19 @@
                                     <th>No.</th>
                                     <th>Jenis Surat</th>
                                     <th>Pemohon</th>
-                                    <th>Status Surat</th>                      
+                                    <th>Status Surat</th>
+                                    <th>Keterangan</th>                      
                                 </tr>
                             </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Jenis Surat</th>
+                                    <th>Pemohon</th>
+                                    <th>Status Surat</th>
+                                    <th>Keterangan</th>                      
+                                </tr>
+                            </tfoot>
                         </tfoot>
                         <tbody>
                             @foreach($status as $item)                                             
