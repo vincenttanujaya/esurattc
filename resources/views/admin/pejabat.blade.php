@@ -123,31 +123,31 @@
                         </div>
                         <!--modal buat delete-->
                         <div class="col-md-12">   
-                                <div class="modal fade" id="deleteModal{{$item->id_pejabat}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg" role="document">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title text-center" id="exampleModalLongTitle">Ubah Pejabat</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                      <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p> Apakah anda yakin ingin menghapus data? </p>
-                                                </div>
-                                                <form action="{{url('/deletepejabat/'.$item->id_pejabat)}}" method="POST")> 
-                                                    @csrf                                           
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-danger">Hapus</button>
-                                                    </div> 
-                                                </form>   
+                            <div class="modal fade" id="deleteModal{{$item->id_pejabat}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-center" id="exampleModalLongTitle">Hapus Pejabat</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
                                             </div>
+                                            <div class="modal-body">
+                                                <p> Apakah anda yakin ingin menghapus data? </p>
+                                            </div>
+                                            <form action="{{url('/deletepejabat/'.$item->id_pejabat)}}" method="POST")> 
+                                                @csrf                                           
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                                </div> 
+                                            </form>   
                                         </div>
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
+                        </div>                            
                         @endforeach				
 					</tbody>
 				</table>			
