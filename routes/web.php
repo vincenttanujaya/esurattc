@@ -62,3 +62,4 @@ Route::post('/tambahpejabat', 'PejabatController@tambahPejabat');
 Route::post('/deletepejabat/{id}', 'PejabatController@deletePejabat');
 Route::post('/editpejabat/{id}', 'PejabatController@editPejabat');
 Route::get('/deletepejabat2', 'PejabatController@deletePejabat2');
+Route::get('/statussurat', 'userController@showStatus');

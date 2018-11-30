@@ -221,7 +221,7 @@
     
     <script src="js/app.js"></script>
     <script src="js/lib/datatables-net/datatables.min.js"></script>
-    @yield('dtable');
+    @yield('dtable')
 
     </body>
     </html>
