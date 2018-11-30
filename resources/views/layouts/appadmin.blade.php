@@ -91,7 +91,13 @@
                 <li class="grey">
                     <a href="#">
                         <i class="font-icon font-icon-user"></i>
-                        <span class="lbl">Administrator</span>
+                        <span class="lbl">Pejabat</span>
+                    </a>
+                </li>
+                <li class="grey">
+                    <a href="#">
+                        <i class="font-icon font-icon-edit"></i>
+                        <span class="lbl">Atribut Surat</span>
                     </a>
                 </li>
             </ul>
