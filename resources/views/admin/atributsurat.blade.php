@@ -28,16 +28,16 @@
                 </tr>
             </thead>
             <tbody>
-                    @foreach($atributsurat as $item)                       
-                    <tr id="attribut{{$item->id_atribut}}">
-                        <td>
-                            {{$item->nama_atribut}}
-                        </td> 
-                        <td>
-                            <button type="button" class="btn btn-inline btn-warning btn-sm"><i class="fa fa-edit"></i>
-                            <button type="button" class="btn btn-inline btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal"><i class="font-icon-trash"></i></button>
-                        </td>                               
-                    </tr>
+                    @foreach($atributsurat as $item)
+                        <tr id="attribut{{$item->id_atribut}}">
+                            <td id="kolom1-{{$item->id_atribut}}">
+                                {{$item->nama_atribut}}
+                            </td> 
+                            <td id="kolom2-{{$item->id_atribut}}">
+                                <button type="button" class="btn btn-inline btn-warning btn-sm" ><i class="fa fa-edit"></i>
+                                <button type="button" class="btn btn-inline btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal"><i class="font-icon-trash"></i></button>
+                            </td>                               
+                        </tr>
                     @endforeach    
             </tbody>
         </table>
@@ -50,7 +50,9 @@
         $(function() {
            $('#atribut').DataTable({
            });
-       });
-   </script>    
+        });
+    </script>
+    <script>
+   </script>
 @endsection
 

@@ -27,7 +27,9 @@
     <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/lib/datatables-net/datatables.min.css">
-	<link rel="stylesheet" href="css/separate/vendor/datatables-net.min.css">
+    <link rel="stylesheet" href="css/separate/vendor/datatables-net.min.css">
+    <link rel="stylesheet" href="css/lib/bootstrap-sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="css/separate/vendor/sweet-alert-animations.min.css">
     >
 
     </head>
@@ -219,6 +221,7 @@
     
     <script src="js/app.js"></script>
     <script src="js/lib/datatables-net/datatables.min.js"></script>
-    @yield('dtable')
+    @yield('dtable');
+
     </body>
     </html>
