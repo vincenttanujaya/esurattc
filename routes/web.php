@@ -57,6 +57,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/tambahatribut','AtributsuratController@create');
 Route::get('/atributsurat', 'AtributsuratController@showatribut');
+Route::post('/editatribut/{id}', 'AtributsuratController@editAtribut');
+Route::post('/deleteatribut/{id}', 'AtributsuratController@deleteAtribut');
+
 Route::get('/pejabat', 'PejabatController@showPejabat');
 Route::post('/tambahpejabat', 'PejabatController@tambahPejabat');
 Route::post('/deletepejabat/{id}', 'PejabatController@deletePejabat');

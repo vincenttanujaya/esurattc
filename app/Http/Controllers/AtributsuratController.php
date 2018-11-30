@@ -23,4 +23,17 @@ class AtributsuratController extends Controller
         $atributsurat = atributsurat::all();
         return view('admin/atributsurat',compact('atributsurat'));
     }
+
+    public function editAtribut(Request $request, $id){
+        $atributsurat = atributsurat::find($id);
+        $atributsurat->nama_atribut = $request->nama;
+        $atributsurat->save();
+        return redirect('/atributsurat');
+    }
+
+    public function deleteAtribut($id){
+        $atributsurat = atributsurat::find($id);
+        $atributsurat->delete();
+        return redirect('/atributsurat');
+    }
 }
