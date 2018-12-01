@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class jenissurat extends Model
 {
-    //
+    protected $table = 'jenissurat';
+    protected $primaryKey = 'id_jenis_surat';
+    
     public function pejabat(){
         return $this->belongsTo('app\pejabat');
 
