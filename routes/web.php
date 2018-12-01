@@ -67,3 +67,6 @@ Route::post('/editpejabat/{id}', 'PejabatController@editPejabat');
 Route::get('/deletepejabat2', 'PejabatController@deletePejabat2');
 
 Route::get('/jenissurat','JenissuratController@showjenissurat');
+Route::post('/tambahjenissurat','JenissuratController@tambahjenissurat');
+
+Route::get('/surat','SuratController@showPermintaan');
