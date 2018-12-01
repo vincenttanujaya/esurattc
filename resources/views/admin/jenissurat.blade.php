@@ -14,13 +14,26 @@
         </div>
 
         <div class="row">
+            <div class="col-lg-4">
             <select class="form-control">
-                    @foreach ($pejabat as $item)
-                        <option>{{$item->nama_pejabat}}</option>
-                    @endforeach
-            </select>
+                        @foreach ($pejabat as $item)
+                            <option>{{$item->nama_pejabat}}</option>
+                        @endforeach
+                </select>
+            </div>
         </div>
+        {{-- <div class="page-content">
+                <div class="container-fluid">
+                    <section class="box-typical box-typical-padding">
+                        <h3 class="with-border">Summernote</h3> --}}
+                        <div class="summernote-theme-1">
+                            <textarea class="summernote" name="name">Hello Summernote</textarea>
+                        </div>
+                    {{-- </section>
+                </div><!--.container-fluid-->
+           </div><!--.page-content--> --}}
 
+            
         <div class="row">
             <div class="col-lg-4">
                 <button type="submit" class="btn btn-inline">Tambahkan Jenis Surat</button>
@@ -68,5 +81,11 @@
     </script>
     <script>
    </script> --}}
+    <script src="js/lib/summernote/summernote.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.summernote').summernote();
+		});
+    </script>
 @endsection
 

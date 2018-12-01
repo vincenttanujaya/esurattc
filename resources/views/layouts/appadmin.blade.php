@@ -19,6 +19,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    
+    <link rel="stylesheet" href="css/lib/summernote/summernote.css"/>
+    <link rel="stylesheet" href="css/separate/pages/editor.min.css">
     <link rel="stylesheet" href="css/lib/lobipanel/lobipanel.min.css">
     <link rel="stylesheet" href="css/separate/vendor/lobipanel.min.css">
     <link rel="stylesheet" href="css/lib/jqueryui/jquery-ui.min.css">
