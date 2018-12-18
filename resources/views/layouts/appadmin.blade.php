@@ -20,20 +20,20 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     
-    <link rel="stylesheet" href="css/lib/summernote/summernote.css"/>
-    <link rel="stylesheet" href="css/separate/pages/editor.min.css">
-    <link rel="stylesheet" href="css/lib/lobipanel/lobipanel.min.css">
-    <link rel="stylesheet" href="css/separate/vendor/lobipanel.min.css">
-    <link rel="stylesheet" href="css/lib/jqueryui/jquery-ui.min.css">
-    <link rel="stylesheet" href="css/separate/pages/widgets.min.css">
-    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
-    <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/lib/datatables-net/datatables.min.css">
-    <link rel="stylesheet" href="css/separate/vendor/datatables-net.min.css">
-    <link rel="stylesheet" href="css/lib/bootstrap-sweetalert/sweetalert.css">
-    <link rel="stylesheet" href="css/separate/vendor/sweet-alert-animations.min.css">
-    >
+    {{-- <link rel="stylesheet" href="css/lib/summernote/summernote.css"/> --}}
+    {{-- <link rel="stylesheet" href="css/separate/pages/editor.min.css"> --}}
+    <link rel="stylesheet" href="/css/lib/lobipanel/lobipanel.min.css">
+    <link rel="stylesheet" href="/css/separate/vendor/lobipanel.min.css">
+    <link rel="stylesheet" href="/css/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/css/separate/pages/widgets.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lib/datatables-net/datatables.min.css">
+    <link rel="stylesheet" href="/css/separate/vendor/datatables-net.min.css">
+    {{-- <link rel="stylesheet" href="css/lib/bootstrap-sweetalert/sweetalert.css"> --}}
+    {{-- <link rel="stylesheet" href="css/separate/vendor/sweet-alert-animations.min.css"> --}}
+    @yield('cssekstra')
 
     </head>
     <body class="with-side-menu wet-aspalt-theme">
@@ -41,8 +41,8 @@
         <header class="site-header">
             <div class="container-fluid">
                 <a href="#" class="site-logo">
-                    <img class="hidden-md-down" src="img/logoITSPutih.png" alt="">
-                    <img class="hidden-lg-down" src="img/IF.gif" alt="">
+                    <img class="hidden-md-down" src="/img/logoITSPutih.png" alt="">
+                    <img class="hidden-lg-down" src="/img/IF.gif" alt="">
                 </a>
                 <button class="hamburger hamburger--htla">
                     <span>toggle menu</span>
@@ -53,7 +53,7 @@
                             
                             <div class="dropdown user-menu">
                                 <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="img/avatar-2-64.png" alt="">
+                                    <img src="/img/avatar-2-64.png" alt="">
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
                                     <a class="dropdown-item"><span class="font-icon glyphicon glyphicon-user"></span>{{ Auth::user()->name }}</a>
@@ -107,15 +107,15 @@
                 </div>
         </div><!--.page-content-->
     
-        <script src="js/lib/jquery/jquery-3.2.1.min.js"></script>
-        <script src="js/lib/popper/popper.min.js"></script>
-        <script src="js/lib/tether/tether.min.js"></script>
-        <script src="js/lib/bootstrap/bootstrap.min.js"></script>
-        <script src="js/plugins.js"></script>
+        <script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+        <script src="/js/lib/popper/popper.min.js"></script>
+        <script src="/js/lib/tether/tether.min.js"></script>
+        <script src="/js/lib/bootstrap/bootstrap.min.js"></script>
+        <script src="/js/plugins.js"></script>
     
-        <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
-        <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
+        <script type="text/javascript" src="/js/lib/jqueryui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/js/lib/lobipanel/lobipanel.min.js"></script>
+        <script type="text/javascript" src="/js/lib/match-height/jquery.matchHeight.min.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script>
             $(document).ready(function() {
@@ -215,8 +215,8 @@
             });
         </script>
     
-    <script src="js/app.js"></script>
-    <script src="js/lib/datatables-net/datatables.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/lib/datatables-net/datatables.min.js"></script>
     @yield('dtable')
 
     </body>

@@ -15,6 +15,7 @@ class AtributsuratController extends Controller
     public function create(Request $request ){
         $atributsurat = new atributsurat;
         $atributsurat->nama_atribut = $request->atribut;
+        $atributsurat->slug = str_replace(' ', '', $request->atribut);
         $atributsurat->save();
         return redirect('atributsurat');
     }

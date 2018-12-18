@@ -1,5 +1,14 @@
 @extends('layouts.appadmin')
 
+@section('cssekstra')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+
+<!-- Include Editor style. -->
+<link href="https://cdn.jsdelivr.net/npm/froala-editor@2.9.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/froala-editor@2.9.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+@endsection
+
 @section('content')
 <div class="box-typical box-typical-padding">
     <h4>Tambah Jenis Surat<h4>
@@ -29,9 +38,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <label class="form-label">Template Surat</label>
-                <div class="summernote-theme-1">
-                    <textarea class="summernote" name="template">Hello Summernote</textarea>
-                </div>
+                <textarea id="templatesurat" name="template"></textarea>
             </div>
         </div>
 
@@ -51,12 +58,18 @@
         
         <div class="row">
             <div class="col-lg-4">
-                <button type="button" onclick="submitForm()" class="btn btn-inline">Tambahkan Jenis Surat</button>
+                <button type="button" onclick="submitForm()" name="action" value="add" class="btn btn-inline">Tambahkan Jenis Surat</button>
             </div>
         </div>
-
-
-
+    </form>
+    <form action="/lihatjenissurat" method="POST" id="myForm2" target="_blank">
+        @csrf
+        <div class="row">
+            <div class="col-lg-4">
+                <input id="sembunyi" name="template2" type="hidden" value="">
+                <button type="button" onclick="lihatForm()" name="templ" value="" class="btn btn-inline" id="tombolcek">Lihat PDF</button>
+            </div>
+        </div>
     </form>
 </div>
 
@@ -84,7 +97,6 @@
             </tbody>
         </table>
 </div> --}}
-
 @endsection
 
 @section('dtable')
@@ -97,17 +109,32 @@
     <script>
    </script> --}}
     <script src="js/lib/summernote/summernote.min.js"></script>
-	<script>
-		$(document).ready(function() {
-			$('.summernote').summernote();
-		});
-        
-        function submitForm(){
-            var markupStr = $('.summernote').summernote('code');
-            document.getElementsByClassName("summernote").value = markupStr;
-            document.getElementById("myForm").submit();
-        }
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+ 
+    <!-- Include Editor JS files. -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@2.9.1/js/froala_editor.pkgd.min.js"></script>
+ 
+    <!-- Initialize the editor. -->
+    <script> $(function() { $('#templatesurat').froalaEditor() }); </script>
+    <script>
+            function submitForm(){
+                // document.getElementById("myForm").setAttribute("target", " "); 
+                $('#templatesurat').froalaEditor('codeView.toggle');
+                document.getElementById("myForm").submit();
+                $('#templatesurat').froalaEditor('codeView.toggle');
+            }
 
+            function lihatForm(){ 
+                $('#templatesurat').froalaEditor('codeView.toggle');
+                var hehe = document.getElementById("sembunyi"); 
+                hehe.value = document.getElementById("templatesurat").value;
+                // alert(hehe.value);
+                document.getElementById("myForm2").submit();
+                $('#templatesurat').froalaEditor('codeView.toggle');
+            }
+    
     </script>
 @endsection
 

@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\jenissurat;
+use App\pejabat;
+use App\atributsurat;
+use App\memilikiatribut;
+
 
 class HomeController extends Controller
 {
@@ -22,7 +27,8 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        
         return view('home');
     }
 

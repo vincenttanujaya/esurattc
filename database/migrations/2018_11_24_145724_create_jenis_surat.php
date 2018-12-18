@@ -15,7 +15,8 @@ class CreateJenisSurat extends Migration
     {
         Schema::create('jenissurat', function (Blueprint $table) {
             $table->increments('id_jenis_surat');
-            $table->integer('id_pejabat');
+            $table->integer('id_pejabat')->unsigned();
+            $table->foreign('id_pejabat')->references('id_pejabat')->on('pejabat');
             $table->string('jenis_surat');
             $table->text('isi_surat');
             $table->timestamps();

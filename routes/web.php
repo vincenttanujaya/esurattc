@@ -68,5 +68,8 @@ Route::get('/deletepejabat2', 'PejabatController@deletePejabat2');
 
 Route::get('/jenissurat','JenissuratController@showjenissurat');
 Route::post('/tambahjenissurat','JenissuratController@tambahjenissurat');
+Route::post('/lihatjenissurat','JenissuratController@lihatjenissurat');
 
 Route::get('/surat','SuratController@showPermintaan');
+Route::get('/prosessurat/{id}', 'SuratController@prosessurat');
+Route::post('/cetaksurat','SuratController@cetaksurat');

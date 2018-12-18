@@ -15,7 +15,8 @@ class CreatePermintaanSurat extends Migration
     {
         Schema::create('permintaansurat', function (Blueprint $table) {
             $table->increments('id_permintaan_surat');
-            $table->integer('id_jenis_surat');
+            $table->integer('id_jenis_surat')->unsigned();
+            $table->foreign('id_jenis_surat')->references('id_jenis_surat')->on('jenissurat');
             $table->string('no_surat');
             $table->date('tgl_butuh_surat');
             $table->string('tgl_ttd_surat');

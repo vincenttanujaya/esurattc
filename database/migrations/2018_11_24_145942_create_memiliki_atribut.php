@@ -14,8 +14,9 @@ class CreateMemilikiAtribut extends Migration
     public function up()
     {
         Schema::create('memilikiatribut', function (Blueprint $table) {
-            $table->integer('id_jenis_surat');
-            $table->integer('id_atribut');
+            $table->increments('id');
+            $table->integer('id_jenis_surat')->unsigned();
+            $table->integer('id_atribut')->unsigned();;
             $table->timestamps();
         });
     }

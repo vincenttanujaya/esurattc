@@ -15,6 +15,7 @@ class CreateAtributSurat extends Migration
     {
         Schema::create('atributsurat', function (Blueprint $table) {
             $table->increments('id_atribut');
+            $table->string('slug');
             $table->string('nama_atribut');
             $table->timestamps();
         });

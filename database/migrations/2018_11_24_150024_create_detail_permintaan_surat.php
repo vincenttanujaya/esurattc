@@ -15,8 +15,10 @@ class CreateDetailPermintaanSurat extends Migration
     {
         Schema::create('detailpermintaansurat', function (Blueprint $table) {
             $table->increments('id_dps');
-            $table->integer('id_atribut');
-            $table->integer('id_permintaan_surat');
+            $table->integer('id_atribut')->unsigned();
+            $table->foreign('id_atribut')->references('id_atribut')->on('atributsurat');
+            $table->integer('id_permintaan_surat')->unsigned();
+            $table->foreign('id_permintaan_surat')->references('id_permintaan_surat')->on('permintaansurat');
             $table->string('rincian');
             $table->timestamps();
         });

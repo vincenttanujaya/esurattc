@@ -15,7 +15,8 @@ class CreatePeserta extends Migration
     {
         Schema::create('peserta', function (Blueprint $table) {
             $table->increments('id_peserta');
-            $table->integer('id_permintaan_surat');
+            $table->integer('id_permintaan_surat')->unsigned();
+            $table->foreign('id_permintaan_surat')->references('id_permintaan_surat')->on('permintaansurat');
             $table->string('nama_peserta');
             $table->string('nrp_peserta');
             $table->timestamps();

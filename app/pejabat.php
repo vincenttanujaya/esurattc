@@ -9,8 +9,11 @@ class pejabat extends Model
     //
     protected $table = 'pejabat';
     protected $primaryKey = 'id_pejabat';
+    protected $fillable = [
+        'nama_pejabat','nip_pejabat','jabatan'
+    ];
 
     public function jenissurat(){
-        return $this->hasMany('app\jenissurat');
+        return $this->hasMany(jenissurat::class);
     }
 }

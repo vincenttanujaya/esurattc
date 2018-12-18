@@ -8,17 +8,20 @@ class jenissurat extends Model
 {
     protected $table = 'jenissurat';
     protected $primaryKey = 'id_jenis_surat';
+    protected $fillable = [
+        'jenis_surat','isi_surat'
+    ];
     
     public function pejabat(){
-        return $this->belongsTo('app\pejabat');
+        return $this->belongsTo(pejabat::class);
 
     }
 
     public function permintaansurat(){
-    	return $this->hasMany('app\permintaansurat');
+    	return $this->hasMany(permintaansurat::class,'id_jenis_surat','id_jenis_surat');
     }
 
     public function memilikiatribut(){
-    	return $this->hasMany('app\memilikiatribut');
+    	return $this->belongsToMany(atributsurat::class,'memilikiatribut','id_jenis_surat','id_atribut');
     }
 }

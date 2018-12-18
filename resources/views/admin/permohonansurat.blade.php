@@ -18,15 +18,6 @@
                                     <th>Keterangan</th>                      
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Jenis Surat</th>
-                                    <th>Pemohon</th>
-                                    <th>Status Surat</th>
-                                    <th>Keterangan</th>                      
-                                </tr>
-                            </tfoot>
                         </tfoot>
                         <tbody>
                             @foreach($status as $item)                                             
@@ -35,6 +26,8 @@
                                     <td>{{$item->jenissurat->jenis_surat}}</td>
                                     <td>{{$item->nama_pemohon}}</td>
                                     <td>{{$item->status_surat}}</td> 
+                                <td><a type="button" href="prosessurat/{{$item->id_permintaan_surat}}" class="btn btn-success btn-sm">Proses</a>
+                                        <button type="button" class="btn btn-danger btn-sm mx-2">Tolak</button></td>
                                 </tr>
                             @endforeach
                         </tbody>
