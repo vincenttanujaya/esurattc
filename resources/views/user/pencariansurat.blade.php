@@ -21,8 +21,9 @@
 					<thead>
 					<tr>
 						<th>ID Surat</th>
-						<th>Tanggal Pengajuan Surat</th>
-						<th>Nama Pengaju</th>
+						<th>Tanggal Pemohonan Surat</th>
+						<th>Nama Pemohon</th>
+						<th>NRP Pemohon</th>
 						<th>Status</th>
 						
 					</tr>
@@ -30,38 +31,23 @@
 					<tfoot>
 					<tr>
 						<th>ID Surat</th>
-						<th>Tanggal Pengajuan Surat</th>
-						<th>Nama Pengaju</th>
+						<th>Tanggal Pemohonan Surat</th>
+						<th>Nama Pemohon</th>
+						<th>NRP Pemohon</th>						
 						<th>Status</th>
 						
 					</tr>
 					</tfoot>
 					<tbody>
-					<tr>
-						<td>Tiger Nixon</td>
-						<td>System Architect</td>
-						<td>Edinburgh</td>
-						<td>61</td>
-					</tr>
-					<tr>
-						<td>Garrett Winters</td>
-						<td>Accountant</td>
-						<td>Tokyo</td>
-						<td>63</td>
-					</tr>
-					<tr>
-						<td>Ashton Cox</td>
-						<td>Junior Technical Author</td>
-						<td>San Francisco</td>
-						<td>66</td>
-					</tr>
-					<tr>
-						<td>Cedric Kelly</td>
-						<td>Senior Javascript Developer</td>
-						<td>Edinburgh</td>
-						<td>22</td>
-					</tr>
-					
+					@foreach ($permintaansurat as $item)
+						<tr>
+							<td>{{$item->id_permintaan_surat}}</td>
+							<td>{{$item->created_at}}</td>
+							<td>{{$item->nama_pemohon}}</td>
+							<td>{{$item->nrp_pemohon}}</td>
+							<td>{{$item->status_surat}}</td>
+						</tr>
+					@endforeach										
 					</tbody>
 				</table>			
 			</div>
@@ -76,7 +62,9 @@
 <script src="js/lib/datatables-net/datatables.min.js"></script>
 <script>
 	$(function() {
-		$('#example').DataTable();
+		$('#example').DataTable({
+			"order": [[ 3, "desc" ]]
+		});
 	});
 </script>
 @endsection

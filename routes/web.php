@@ -15,13 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/carisurat', function () {
-    return view('user/pencariansurat');
-});
 
-Route::get('/permohonan','PemohonController@index');
+
+/*sisi pemohon*/
 Route::get('/permohonan/{id}','PemohonController@index2');
 Route::post('/tambahpermohonan','PemohonController@tambahPermohonan');
+Route::get('/carisurat', 'PemohonController@cariSurat');
 
 
 Route::get('/testnya', 'HomeController@testhalaman');

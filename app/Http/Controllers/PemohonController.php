@@ -11,13 +11,10 @@ use App\detailpermintaansurat;
 
 class PemohonController extends Controller
 {
-    public function index(){
-        $jenissurat = \App\jenissurat::all();
- 		return view('user/pengajuan',  compact('jenissurat'));
-    }
     public function index2($id){
+        $jenissurat = \App\jenissurat::all();
         $atribut = \App\memilikiatribut::where('id_jenis_surat',$id)->with('atributsurat')->get();
- 		return view('user/pengajuan2',  compact('atribut','id'));
+ 		return view('user/pengajuan',  compact('atribut','id', 'jenissurat'));
     }
 
     public function tambahPermohonan(Request $request){
@@ -40,6 +37,13 @@ class PemohonController extends Controller
             $isisurat->save();        
         }
 
-        return redirect('/permohonan');
+        return redirect('/carisurat');
     }
+
+    public function cariSurat(){
+        $permintaansurat = \App\permintaansurat::orderby('created_at', 'DESC')->get();
+        $jenissurat = \App\jenissurat::all();
+        return view('user/pencariansurat',  compact('permintaansurat','jenissurat'));
+    }
+
 }

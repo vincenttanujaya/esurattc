@@ -53,13 +53,19 @@
 	                <div class="site-header-collapsed">
 	                    <div class="site-header-collapsed-in">
 							<div class="dropdown dropdown-typical">
-								<a class="dropdown-toggle no-arr" id="dd-header-marketing" data-target="#" href="pengajuan" >
+								<a class="dropdown-toggle no-arr" id="dd-header-marketing" data-toggle="dropdown" aria-haspopup="true" >
 									<span class="font-icon font-icon-plus"></span>
-								   <span>Ajukan Surat</span>                                
+								   	<span>Ajukan Surat</span>                                
 							   </a>
+							   <div class="dropdown-menu" aria-labelledby="dd-header-marketing">
+								   @foreach ($jenissurat as $item)
+								   		<a class="dropdown-item" href="../permohonan/{{$item->id_jenis_surat}}">{{$item->jenis_surat}}</a>
+								   @endforeach									
+	                                
+							   </div>
 						   </div> 
 	                        <div class="dropdown dropdown-typical">
-	                             <a class="dropdown-toggle no-arr" id="dd-header-marketing" data-target="#" href="carisurat" >
+	                             <a class="dropdown-toggle no-arr" id="dd-header-marketing" data-target="#" href="../carisurat" >
 	                             	<span class="font-icon font-icon-search"></span>
 	                                <span>Pencarian Surat</span>                                
 	                            </a>
@@ -149,11 +155,7 @@
 			});
 		});
 	</script>
-	<script>
-		$(function() {
-			$('#example').DataTable();
-		});
-	</script>
+
 
 <script src="js/app.js"></script>
 @yield('script')
