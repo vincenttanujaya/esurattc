@@ -15,41 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/coba2', function () {
-    return view('user/coba2');
-});
-
 Route::get('/carisurat', function () {
     return view('user/pencariansurat');
 });
 
-Route::get('/keteranganaktif', function () {
-    return view('user/skam');
-});
-
-Route::get('/kerjapraktik', function () {
-    return view('user/kerjapraktik');
-});
-
-Route::get('/rekombeasiswa', function () {
-    return view('user/rekombeasiswa');
-});
-
-Route::get('/rekomlomba', function () {
-    return view('user/rekomlomba');
-});
-
-Route::get('/permohonandatalomba', function () {
-    return view('user/permohonandatalomba');
-});
-
-Route::get('/permohonandatatugas', function () {
-    return view('user/permohonandatatugas');
-});
+Route::get('/permohonan','PemohonController@index');
+Route::get('/permohonan/{id}','PemohonController@index2');
+Route::post('/tambahpermohonan','PemohonController@tambahPermohonan');
 
 
 Route::get('/testnya', 'HomeController@testhalaman');
-
 
 Auth::routes();
 

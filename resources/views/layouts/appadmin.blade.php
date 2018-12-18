@@ -76,9 +76,9 @@
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <li class="grey">
-                    <a href="permohonansurat">
-                        <i class="font-icon font-icon-notebook"></i>
-                        <span class="lbl">Permohonan</span>
+                    <a href="../home">
+                        <i class="font-icon font-icon-dashboard"></i>
+                        <span class="lbl">Home</span>
                     </a>
                 </li>
                 <li class="grey with-sub">

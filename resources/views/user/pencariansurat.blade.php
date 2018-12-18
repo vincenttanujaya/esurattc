@@ -68,3 +68,15 @@
 		</div>
 	</div>
 @endsection
+@section('style')
+<link rel="stylesheet" href="css/lib/datatables-net/datatables.min.css">
+<link rel="stylesheet" href="css/separate/vendor/datatables-net.min.css">
+@endsection
+@section('script')
+<script src="js/lib/datatables-net/datatables.min.js"></script>
+<script>
+	$(function() {
+		$('#example').DataTable();
+	});
+</script>
+@endsection

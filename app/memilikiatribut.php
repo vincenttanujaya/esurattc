@@ -13,6 +13,6 @@ class memilikiatribut extends Model
     }
 
     public function atributsurat(){
-        return $this->belongsTo('App\atributsurat');
+        return $this->belongsTo('App\atributsurat', 'id_atribut');
     }
 }
