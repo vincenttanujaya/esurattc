@@ -30,12 +30,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/tambahatribut','AtributsuratController@create');
+Route::post('/tambahatribut2','AtributsuratController@create2');
 Route::get('/atributsurat', 'AtributsuratController@showatribut');
 Route::post('/editatribut/{id}', 'AtributsuratController@editAtribut');
 Route::post('/deleteatribut/{id}', 'AtributsuratController@deleteAtribut');
 
 Route::get('/pejabat', 'PejabatController@showPejabat');
 Route::post('/tambahpejabat', 'PejabatController@tambahPejabat');
+Route::post('/tambahpejabat2', 'PejabatController@tambahPejabat2');
 Route::post('/deletepejabat/{id}', 'PejabatController@deletePejabat');
 Route::post('/editpejabat/{id}', 'PejabatController@editPejabat');
 Route::get('/deletepejabat2', 'PejabatController@deletePejabat2');

@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-4">
                 <label class="form-label">Tanggal TTD Surat</label>
                 <fieldset class="form-group">
                     <input type="text" class="form-control" id="exampleInput" placeholder="Tanggal Tanda Tangan" name="tglttd" required>

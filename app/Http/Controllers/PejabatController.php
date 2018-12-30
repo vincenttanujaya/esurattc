@@ -30,6 +30,16 @@ class PejabatController extends Controller
         return redirect('/pejabat');
     }
 
+    public function tambahPejabat2(Request $request)
+    {      
+        $pejabat = new Pejabat;
+        $pejabat->nama_pejabat = $request->nama;
+        $pejabat->nip_pejabat = $request->nip;
+        $pejabat->jabatan = $request->jabatan;
+        $pejabat->save();
+        return redirect('/jenissurat');
+    }
+
     public function deletePejabat($id){
         $pejabat = Pejabat::find($id);
         $pejabat->delete();

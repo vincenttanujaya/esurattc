@@ -20,6 +20,14 @@ class AtributsuratController extends Controller
         return redirect('atributsurat');
     }
 
+    public function create2(Request $request ){
+        $atributsurat = new atributsurat;
+        $atributsurat->nama_atribut = $request->atribut;
+        $atributsurat->slug = str_replace(' ', '', $request->atribut);
+        $atributsurat->save();
+        return redirect('jenissurat');
+    }
+
     public function showatribut(){
         $atributsurat = atributsurat::all();
         return view('admin/atributsurat',compact('atributsurat'));

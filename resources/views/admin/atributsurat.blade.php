@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-md-12">
                 <div class="text-left">
-                    <h5>DAFTAR PEJABAT</h5>
+                    <h5>DAFTAR ATRIBUT</h5>
                 </div>
 				<table id="atribut" class="display table table-striped table-bordered"  cellspacing="0" width="100%">
                     <thead>
