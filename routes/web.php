@@ -40,6 +40,7 @@ Route::post('/deletepejabat/{id}', 'PejabatController@deletePejabat');
 Route::post('/editpejabat/{id}', 'PejabatController@editPejabat');
 Route::get('/deletepejabat2', 'PejabatController@deletePejabat2');
 
+Route::get('/daftarjenissurat','JenissuratController@daftarjenissurat');
 Route::get('/jenissurat','JenissuratController@showjenissurat');
 Route::post('/tambahjenissurat','JenissuratController@tambahjenissurat');
 Route::post('/lihatjenissurat','JenissuratController@lihatjenissurat');

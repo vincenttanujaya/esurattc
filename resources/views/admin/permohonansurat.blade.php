@@ -26,7 +26,7 @@
                                     <td>{{$item->jenissurat->jenis_surat}}</td>
                                     <td>{{$item->nama_pemohon}}</td>
                                     <td>{{$item->status_surat}}</td> 
-                                <td><a type="button" href="prosessurat/{{$item->id_permintaan_surat}}" class="btn btn-success btn-sm">Proses</a>
+                                <td><button type="button" onclick="window.location.href='../prosessurat/{{$item->id_permintaan_surat}}'" class="btn btn-success btn-sm">Proses</button>
                                         <button type="button" class="btn btn-danger btn-sm mx-2">Tolak</button></td>
                                 </tr>
                             @endforeach

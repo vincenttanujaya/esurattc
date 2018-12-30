@@ -44,7 +44,7 @@
 
         
         <div class="row m-t-lg">
-            <div class="col-md-3 col-sm-6"> 
+            <div class="col-md-12"> 
                 <label class="form-label">Atribut Yang Dibutuhkan</label>   
                 @foreach ($atributsurat as $item) 
                     <div class="checkbox-bird">

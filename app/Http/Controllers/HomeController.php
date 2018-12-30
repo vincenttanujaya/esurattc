@@ -31,12 +31,4 @@ class HomeController extends Controller
         
         return view('home');
     }
-
-    public function testhalaman()
-    {
-        $mantap = '<h1> Nama : !1 <!h1>';
-        $replacenama = '!1';
-        $mantap = str_replace($replacenama, 'Diana', $mantap );
-        return view('test', ['mantap'=>$mantap]);
-    }
 }

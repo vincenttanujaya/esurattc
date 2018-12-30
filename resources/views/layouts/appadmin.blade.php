@@ -81,13 +81,19 @@
                         <span class="lbl">Home</span>
                     </a>
                 </li>
+                <li class="grey">
+                        <a href="../surat">
+                            <i class="font-icon font-icon-mail"></i>
+                            <span class="lbl">Permintaan Surat</span>
+                        </a>
+                    </li>
                 <li class="grey with-sub">
                     <span>
                         <span class="font-icon font-icon-burger"></span>
                         <span class="lbl">Template Surat</span>
                     </span>
                     <ul>
-                        <li><a href="jenissurat"><span class="lbl">Jenis Surat</span></a></li>
+                        <li><a href="../daftarjenissurat"><span class="lbl">Daftar Template Surat</span></a></li>
                         <li><a href="atributsurat"><span class="lbl">Atribut Surat</span></a></li>
                         <li><a href="pejabat"><span class="lbl">Pejabat</span></a></li>
                     </ul>

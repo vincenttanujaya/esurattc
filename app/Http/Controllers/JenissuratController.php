@@ -18,6 +18,12 @@ class JenissuratController extends Controller
         $this->middleware('auth');
     }
 
+    public function daftarjenissurat(){
+        $counter = 1;
+        $jenissurat = jenissurat::all();
+        return view('admin/daftarjenissurat',  compact('counter', 'jenissurat'));
+    }
+
     public function showjenissurat(){
         $jenissurat = jenissurat::with("pejabat")->with("memilikiatribut")->get();
         
@@ -27,7 +33,7 @@ class JenissuratController extends Controller
         $pejabat = Pejabat::all();
         $atributsurat = atributsurat::all();
         // dd($pejabat);
-        return view('admin/jenissurat',compact('pejabat','atributsurat'));
+        return view('admin/tambahjenissurat',compact('pejabat','atributsurat'));
     }
 
     public function tambahjenissurat(Request $request)

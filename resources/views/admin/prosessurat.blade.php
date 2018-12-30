@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-12">
                 <label class="form-label">Tanggal TTD Surat</label>
                 <fieldset class="form-group">
                     <input type="text" class="form-control" id="exampleInput" placeholder="Tanggal Tanda Tangan" name="tglttd" required>
@@ -36,7 +36,7 @@
         
         <div class="row">
             <div class="col-lg-4">
-                <button type="submit" name="id_permintaan" value="{{$detailsurat->id_permintaan_surat}}" class="btn btn-inline">Tambahkan Jenis Surat</button>
+                <button type="submit" name="id_permintaan" value="{{$detailsurat->id_permintaan_surat}}" class="btn btn-inline">Cetak Surat</button>
             </div>
         </div>
     </form>
