@@ -48,5 +48,9 @@ Route::post('/tambahjenissurat','JenissuratController@tambahjenissurat');
 Route::post('/lihatjenissurat','JenissuratController@lihatjenissurat');
 
 Route::get('/surat','SuratController@showPermintaan');
-Route::get('/prosessurat/{id}', 'SuratController@prosessurat');
+Route::get('/prosessurat/{id}', 'SuratController@prosessurat')->name('prosessurat');
 Route::post('/cetaksurat','SuratController@cetaksurat');
+Route::post('/updatestatus/{id}', 'SuratController@updateStatus');
+Route::post('/tolaksurat/{id}', 'SuratController@tolakSurat');
+
+Route::get('/riwayat','RiwayatController@showRiwayat');

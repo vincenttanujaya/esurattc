@@ -99,7 +99,7 @@
                     </ul>
                 </li>
                 <li class="grey">
-                    <a href="#">
+                    <a href="../riwayat">
                         <i class="font-icon font-icon-zigzag"></i>
                         <span class="lbl">Riwayat</span>
                     </a>

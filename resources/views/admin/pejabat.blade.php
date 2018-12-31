@@ -45,7 +45,7 @@
                 <div class="text-left">
                     <h5>DAFTAR PEJABAT</h5>
                 </div>
-				<table id="" class="display table table-striped table-bordered" 	cellspacing="0" width="100%">
+				<table id="pejabat" class="display table table-striped table-bordered" 	cellspacing="0" width="100%">
 					<thead>
 					    <tr>
                             <th>No.</th>

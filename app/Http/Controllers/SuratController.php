@@ -16,8 +16,10 @@ class SuratController extends Controller
         $this->middleware('auth');
     }
     public function showPermintaan(){
-        $status = permintaansurat::with('jenissurat')->get();
-        // dd($status);
+        $status = permintaansurat::with('jenissurat')
+        ->where('status_surat', '!=', 'SELESAI')
+        ->where('status_surat', '!=', 'DITOLAK')
+        ->get();
         $counter = 1;
         return view('admin/permohonansurat',  compact('status', 'counter'));
     }
@@ -29,9 +31,10 @@ class SuratController extends Controller
     }
     public function prosessurat($id){
         $detail = permintaansurat::where('id_permintaan_surat',$id)->with('jenissurat')->with('detailpermintaansurat')->with('atributsurat')->get();
-        // dd($detail);
+        
         $detailsurat = $detail[0];
         $count = $detailsurat->atributsurat->count();
+        //dd($detailsurat);
         return view('admin/prosessurat',compact('detailsurat','count'));
     }
 
@@ -42,7 +45,6 @@ class SuratController extends Controller
         // dd($permintaan);
         $permintaan->no_surat = $request->nomorsurat;
         $permintaan->tgl_ttd_surat = $request->tglttd;
-        $permintaan->status_surat = "DIPROSES";
         $permintaan->save();
         
         for ($i=0; $i < $count; $i++) { 
@@ -77,5 +79,19 @@ class SuratController extends Controller
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadHTML($isisurat);
         return $pdf->stream();
+    }
+
+    public function updateStatus(Request $request, $id){
+        $status = permintaansurat::find($id);
+        $status->status_surat = $request->status;
+        $status->save();
+        return redirect()->route('prosessurat', [$id]);
+    }
+
+    public function tolakSurat(Request $request, $id){
+        $status = permintaansurat::find($id);
+        $status->status_surat = 'DITOLAK';
+        $status->save();
+        return redirect('/surat');
     }
 }
