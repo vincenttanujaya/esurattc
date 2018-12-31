@@ -14,9 +14,10 @@ class RiwayatController extends Controller
     }
 
     public function showRiwayat(){
-        $status = permintaansurat::with('jenissurat')
+        $status = permintaansurat::with('jenissurat')->with('detailpermintaansurat')->with('atributsurat')
         ->whereIn('status_surat',  ['DITOLAK', 'SELESAI'])
         ->get();
+        //dd($status);
         $counter = 1;
         return view('admin/riwayat',  compact('status', 'counter'));
     }
