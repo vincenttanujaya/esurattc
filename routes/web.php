@@ -22,7 +22,6 @@ Route::get('/permohonan/{id}','PemohonController@index2');
 Route::post('/tambahpermohonan','PemohonController@tambahPermohonan');
 Route::get('/carisurat', 'PemohonController@cariSurat');
 
-
 Route::get('/testnya', 'HomeController@testhalaman');
 
 Auth::routes();
@@ -46,6 +45,9 @@ Route::get('/daftarjenissurat','JenissuratController@daftarjenissurat');
 Route::get('/jenissurat','JenissuratController@showjenissurat');
 Route::post('/tambahjenissurat','JenissuratController@tambahjenissurat');
 Route::post('/lihatjenissurat','JenissuratController@lihatjenissurat');
+Route::get('/ubahkeaktifan/{id}','JenissuratController@ubahkeaktifan');
+Route::get('/lihatform/{id}','JenissuratController@lihatform');
+
 
 Route::get('/surat','SuratController@showPermintaan');
 Route::get('/prosessurat/{id}', 'SuratController@prosessurat')->name('prosessurat');

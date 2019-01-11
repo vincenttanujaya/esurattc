@@ -12,7 +12,7 @@ use App\detailpermintaansurat;
 class PemohonController extends Controller
 {
     public function index2($id){
-        $jenissurat = \App\jenissurat::all();
+        $jenissurat = \App\jenissurat::where('tampil',1)->get();
         $atribut = \App\memilikiatribut::where('id_jenis_surat',$id)->with('atributsurat')->get();
  		return view('user/pengajuan',  compact('atribut','id', 'jenissurat'));
     }

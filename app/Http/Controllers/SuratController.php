@@ -64,7 +64,7 @@ class SuratController extends Controller
         // dd($request);
         
         for ($i=0; $i < $count; $i++) { 
-            $isisurat = str_replace($request->slugg[$i],$request->isi[$i],$isisurat);
+            $isisurat = str_replace('!('.$request->slugg[$i].')',$request->isi[$i],$isisurat);
         }
         $isisurat = str_replace('!namamahasiswa',$detailsurat->nama_pemohon,$isisurat);
         $isisurat = str_replace('!nrpmahasiswa',$detailsurat->nrp_pemohon,$isisurat);

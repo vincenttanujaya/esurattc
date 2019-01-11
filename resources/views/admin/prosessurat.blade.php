@@ -32,7 +32,7 @@
                                 <fieldset class="form-group">
                                     <input type="text" class="form-control" id="exampleInput" placeholder="Nama Surat" name="isi[]" value="{{$detailsurat->detailpermintaansurat[$i]->rincian}}">
                                     <input name="idattr[]" type="hidden" value="{{$detailsurat->detailpermintaansurat[$i]->id_dps}}">
-                                    <input name="slugg[]" type="hidden" value="!{{$detailsurat->atributsurat[$i]->slug}}">
+                                    <input name="slugg[]" type="hidden" value="{{$detailsurat->atributsurat[$i]->slug}}">
                                 </fieldset>                            
                              @endfor
                         </div>

@@ -18,6 +18,7 @@ class CreateJenisSurat extends Migration
             $table->integer('id_pejabat')->unsigned();
             $table->foreign('id_pejabat')->references('id_pejabat')->on('pejabat');
             $table->string('jenis_surat');
+            $table->integer('tampil')->default('1');
             $table->text('isi_surat');
             $table->timestamps();
         });

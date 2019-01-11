@@ -16,7 +16,8 @@
                         <tr>
                             <th>No.</th>
                             <th>Nama Surat</th>
-                            <th>Aksi</th>                        
+                            <th>Status Jenis Surat</th>     
+                            <th>Aksi</th>                   
                         </tr>
                     </thead>
                     <tbody>
@@ -25,12 +26,29 @@
                             <td>{{$counter++}}</td>                            
                             <td>
                                 {{$item->jenis_surat}}
-                            </td> 
+                            </td>             
                             <td>
-                                <button type="button" class="btn btn-inline  btn-sm"data-toggle="modal" data-target="#deleteModal"><i class="fa fa-search"></i> Lihat</button>
-                                <button type="button" class="btn btn-inline btn-warning btn-sm"data-toggle="modal" data-target="#deleteModal"><i class="fa fa-edit"></i> Edit</button>
-                                <button type="button" class="btn btn-inline btn-danger btn-sm"data-toggle="modal" data-target="#deleteModal"><i class="font-icon-trash"></i> Hapus</button>
-                            </td>                                                        
+                                @if ( $item->tampil == '1' )
+                                    Aktif
+                                @else
+                                    Tidak Aktif
+                                @endif
+                            </td>     
+                            <td>
+                                <form action="/lihatform/{{$item->id_jenis_surat}}" method="get">
+                                    <button type="submit" class="btn btn-inline btn-sm"><i class="fa fa-search"></i> Lihat</button>
+                                </form>
+
+                                    <button type="button" class="btn btn-inline btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</button>
+                                
+                                <form action="/ubahkeaktifan/{{$item->id_jenis_surat}}" method="get">
+                                    @if ( $item->tampil == '1' )
+                                        <button type="submit" class="btn btn-inline btn-danger btn-sm"data-toggle="modal" data-target="#deleteModal"></i>Non-Aktifkan</button>
+                                    @else
+                                        <button type="submit" class="btn btn-inline btn-success btn-sm"data-toggle="modal" data-target="#deleteModal"></i>Aktifkan</button>
+                                    @endif
+                                </form>
+                            </td>                                       
                         </tr>
                         @endforeach
                     </tbody>

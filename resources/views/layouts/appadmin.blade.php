@@ -94,7 +94,7 @@
                     </span>
                     <ul>
                         <li><a href="../daftarjenissurat"><span class="lbl">Daftar Template Surat</span></a></li>
-                        <li><a href="../atributsurat"><span class="lbl">Atribut Surat</span></a></li>
+                        {{-- <li><a href="../atributsurat"><span class="lbl">Atribut Surat</span></a></li> --}}
                         <li><a href="../pejabat"><span class="lbl">Pejabat</span></a></li>
                     </ul>
                 </li>

@@ -17,6 +17,7 @@ class CreateAtributSurat extends Migration
             $table->increments('id_atribut');
             $table->string('slug');
             $table->string('nama_atribut');
+            $table->integer('pengisi');
             $table->timestamps();
         });
     }
