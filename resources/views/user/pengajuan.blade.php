@@ -43,12 +43,34 @@
 							</div>
 						</div>
 					@endforeach	
-					<div class="row text-right">
-						<div class="col-md-12">
-							<button type="submit" class="btn btn-rounded btn-inline">Ajukan</button>
-						</div>
-					</div>		
 			</div>
+
+			@if ($jenissuratid->komunal=="1")
+				<div class="box-typical box-typical-padding">
+						<h5 class="m-t-sm ">Peserta</h5>
+						<h6 class="m-t-sm with-border">Termasuk Pemohon</h6>						
+						<div class="form-group row">
+							<label for="inputPassword" class="col-sm-2 form-control-label">Jumlah Peserta</label>
+							<div class="col-sm-10">
+							  <select onchange="komunal()" class="form-control" id="jumlah">
+								@for ($i = 0; $i <= 20; $i++)
+							  		<option value="{{$i}}">{{$i}}</option>
+								@endfor
+							  </select>
+							</div>
+						</div>
+						<div id="peserta">
+								
+						</div>
+								
+				</div>
+			@endif
+				<div class="row text-right">
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-rounded btn-inline">Ajukan</button>
+					</div>
+				</div>
+
 			</form>
 		</div>
 	</div>				
@@ -63,5 +85,14 @@
 		$(function() {
 			$('#tags-editor-textarea').tagEditor();
 		});
+	</script>
+	<script>
+		function komunal(){
+			var jumlahpeserta = document.getElementById('jumlah').value;
+			document.getElementById('peserta').innerHTML ="";
+			for (var i = 0; i < jumlahpeserta; i++) {
+				document.getElementById('peserta').innerHTML  += '<div class="row"><div class="col"><input type="text" class="form-control" placeholder="Nama  ' + (i+1) + '" name="namapeserta[]"></div><div class="col"><input type="text" class="form-control" placeholder="NRP ' + (i+1) + '" name="nrppeserta[]"></div></div>' ;
+			}
+		}
 	</script>
 @endsection

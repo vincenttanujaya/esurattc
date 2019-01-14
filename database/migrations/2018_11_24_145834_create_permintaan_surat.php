@@ -24,10 +24,10 @@ class CreatePermintaanSurat extends Migration
             $table->string('nrp_pemohon');
             $table->string('status_surat')->default('BELUM DIPROSES');
             $table->text('catatan')->nullable();
+            $table->text('suratselesai')->nullable();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

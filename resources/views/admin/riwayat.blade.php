@@ -32,7 +32,9 @@
                                     <td>{{$item->status_surat}}</td> 
                                     <td class="text-center">
                                         @if ($item->status_surat =='SELESAI')
-                                            <button type="button" class="btn btn-warning btn-sm"><i class="fa fa-search"></i> Lihat Surat</button>
+                                        <form action="/lihatsuratselesai/{{$item->id_permintaan_surat}}" method="get">
+                                            <button type="submit" class="btn btn-warning btn-sm"><i class="fa fa-search"></i> Lihat Surat</button>
+                                        </form>
                                             <!--ini tolong didirectin ke tempat cetak suratnya-->
                                         @else
                                             <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#detailTolak{{$item->id_permintaan_surat}}"><i class="fa fa-search"></i> Lihat Permintaan</button>

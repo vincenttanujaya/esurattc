@@ -61,12 +61,19 @@ class JenissuratController extends Controller
         
         $templatesurat = $request->template;
         $replacement ="@page {margin: 1in;}";
+        if (strpos($templatesurat,"!komunal")!=false) {
+            $replacement.='.komunalnya, .komunalnya th, .komunalnya td {border: 1px solid black;border-collapse: collapse;}';
+        }
         $posisi = stripos($templatesurat,"<style>");
         $templatesurat = substr_replace($templatesurat,$replacement,$posisi+7,0);
         
+
         $jenissurat = new jenissurat;
         $jenissurat->jenis_surat = $request->jenissurat;
         $jenissurat->id_pejabat = $request->pejabat;
+        if (strpos($templatesurat,"!komunal")!=false) {
+            $jenissurat->komunal = "1";
+        }
         $jenissurat->isi_surat = $templatesurat;
         $jenissurat->save();
         
@@ -105,7 +112,14 @@ class JenissuratController extends Controller
     }
     public function lihatjenissurat(Request $request){
         $templatesurat = $request->template2;
-        $replacement ="@page {margin: 1in;}";
+        $replacement ='@page {margin: 1in;}';
+        
+        if (strpos($templatesurat,"!komunal")!=false) {
+            $replacement.='.komunalnya, .komunalnya th, .komunalnya td {border: 1px solid black;border-collapse: collapse;}';
+            $replacement2 = '<table class="komunalnya"style="width:100%"><tr><th>Nama</th><th>NRP</th></tr><tr><td>Vincent Marcello Dwi Tanujaya</td><td>05111640000089</td></tr><tr><td>Diana Hudani</td><td>05111640000079</td></tr></table>';
+            $templatesurat = str_replace("!komunal",$replacement2,$templatesurat);        
+        }
+
         $posisi = stripos($templatesurat,"<style>");
         $templatesurat = substr_replace($templatesurat,$replacement,$posisi+7,0);
         

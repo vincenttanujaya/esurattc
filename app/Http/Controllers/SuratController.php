@@ -8,6 +8,7 @@ use App\jenissurat;
 use App\detailpermintaansurat;
 use App\atributsurat;
 use App\pejabat;
+use App\peserta;
 
 class SuratController extends Controller
 {
@@ -31,16 +32,16 @@ class SuratController extends Controller
     }
     public function prosessurat($id){
         $detail = permintaansurat::where('id_permintaan_surat',$id)->with('jenissurat')->with('detailpermintaansurat')->with('atributsurat')->get();
-        
+        $jumlahpeserta = peserta::where('id_permintaan_surat',$id)->count();
+        $peserta = peserta::where('id_permintaan_surat',$id)->get();
         $detailsurat = $detail[0];
         $count = $detailsurat->atributsurat->count();
-        //dd($detailsurat);
-        return view('admin/prosessurat',compact('detailsurat','count'));
+        // dd($peserta);
+        return view('admin/prosessurat',compact('detailsurat','count','peserta','jumlahpeserta'));
     }
 
     public function cetaksurat(Request $request){
         $count = count($request->isi);
-        // dd($request);
         $permintaan = permintaansurat::find($request->id_permintaan);
         // dd($permintaan);
         $permintaan->no_surat = $request->nomorsurat;
@@ -64,18 +65,31 @@ class SuratController extends Controller
         // dd($request);
         
         for ($i=0; $i < $count; $i++) { 
-            $isisurat = str_replace('!('.$request->slugg[$i].')',$request->isi[$i],$isisurat);
+            $isisurat = str_ireplace('!('.$request->slugg[$i].')',$request->isi[$i],$isisurat);
         }
-        $isisurat = str_replace('!namamahasiswa',$detailsurat->nama_pemohon,$isisurat);
-        $isisurat = str_replace('!nrpmahasiswa',$detailsurat->nrp_pemohon,$isisurat);
-        $isisurat = str_replace('!nomorsurat',$detailsurat->no_surat,$isisurat);
-        $isisurat = str_replace('!tanggalttd',$detailsurat->tgl_ttd_surat,$isisurat);
-        $isisurat = str_replace('!Jabatan',$pejabat->jabatan,$isisurat);
-        $isisurat = str_replace('!Pejabat',$pejabat->nama_pejabat,$isisurat);
-        $isisurat = str_replace('!NIP',$pejabat->nip_pejabat,$isisurat);
+        $isisurat = str_ireplace('!namamahasiswa',$detailsurat->nama_pemohon,$isisurat);
+        $isisurat = str_ireplace('!nrpmahasiswa',$detailsurat->nrp_pemohon,$isisurat);
+        $isisurat = str_ireplace('!nomorsurat',$detailsurat->no_surat,$isisurat);
+        $isisurat = str_ireplace('!tanggalttd',$detailsurat->tgl_ttd_surat,$isisurat);
+        $isisurat = str_ireplace('!Jabatan',$pejabat->jabatan,$isisurat);
+        $isisurat = str_ireplace('!Pejabat',$pejabat->nama_pejabat,$isisurat);
+        $isisurat = str_ireplace('!NIP',$pejabat->nip_pejabat,$isisurat);
         
+        if (stripos($isisurat,"!komunal")!=false) {
+            $countpeserta = count($request->namapeserta);
+            $replacement2 = '<table class="komunalnya"style="width:100%"><tr><th>Nama</th><th>NRP</th></tr>';
+            for ($i=0; $i < $countpeserta ; $i++) { 
+                $replacement2.= '<tr><td>'. $request->namapeserta[$i] .'</td><td>'. $request->nrppeserta[$i] . '</td></tr>';
+            }
+            $replacement2.= '</table>';
+            $isisurat = str_ireplace("!komunal",$replacement2,$isisurat);        
+        }
 
-
+        $status = permintaansurat::find($request->id_permintaan);
+        $status->status_surat = 'DIPROSES';
+        $status->suratselesai = $isisurat;
+        $status->save();
+        
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadHTML($isisurat);
         return $pdf->stream();

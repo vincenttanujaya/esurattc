@@ -1,96 +1,78 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>E-Surat Informatika</title>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>StartUI - Premium Bootstrap 4 Admin Dashboard Template</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+	<link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
+	<link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+	<link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+	<link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
+	<link href="img/favicon.png" rel="icon" type="image/png">
+	<link href="img/favicon.ico" rel="shortcut icon">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+<link rel="stylesheet" href="css/separate/pages/login.min.css">
+    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body style="background-color:blue;">
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    E-Surat Informatika
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+    <div class="page-center">
+        <div class="page-center-in">
+            <div class="container-fluid">
+                <form class="sign-box">
+                    <div class="sign-avatar no-photo">&plus;</div>
+                    <header class="sign-title">Sign Up</header>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="E-Mail"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Repeat password"/>
+                    </div>
+                    <button type="submit" class="btn btn-rounded btn-success sign-up">Sign up</button>
+                    <p class="sign-note">Already have an account? <a href="sign-in.html">Sign in</a></p>
+                    <!--<button type="button" class="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>-->
+                </form>
             </div>
         </div>
-    </body>
+    </div><!--.page-center-->
+
+<script src="js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="js/lib/popper/popper.min.js"></script>
+<script src="js/lib/tether/tether.min.js"></script>
+<script src="js/lib/bootstrap/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
+    <script>
+        $(function() {
+            $('.page-center').matchHeight({
+                target: $('html')
+            });
+
+            $(window).resize(function(){
+                setTimeout(function(){
+                    $('.page-center').matchHeight({ remove: true });
+                    $('.page-center').matchHeight({
+                        target: $('html')
+                    });
+                },100);
+            });
+        });
+    </script>
+<script src="js/app.js"></script>
+</body>
 </html>

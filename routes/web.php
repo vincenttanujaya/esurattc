@@ -56,3 +56,4 @@ Route::post('/updatestatus/{id}', 'SuratController@updateStatus');
 Route::post('/tolaksurat/{id}', 'SuratController@tolakSurat');
 
 Route::get('/riwayat','RiwayatController@showRiwayat');
+Route::get('/lihatsuratselesai/{id}','RiwayatController@lihatsurat');

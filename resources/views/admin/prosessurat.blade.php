@@ -36,7 +36,21 @@
                                 </fieldset>                            
                              @endfor
                         </div>
-                     </div>               
+                     </div>
+                     @if ($jumlahpeserta>0)
+                         <h5>PESERTA</h5>   
+                         @for ($i = 0; $i < $jumlahpeserta; $i++) 
+                            <div class="row">
+                                <div class="col">
+                                <input type="text" class="form-control" placeholder="Nama" name="namapeserta[]" value="{{$peserta[$i]->nama_peserta}}">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="NRP" name="nrppeserta[]" value="{{$peserta[$i]->nrp_peserta}}">
+                                </div>
+                            </div>   
+                         @endfor
+                     @endif
+                     <br>         
                     <div class="row">
                         <div class="col-lg-12">
                             <button type="submit" name="id_permintaan" value="{{$detailsurat->id_permintaan_surat}}" class="btn btn-inline">Simpan & Cetak Surat</button>

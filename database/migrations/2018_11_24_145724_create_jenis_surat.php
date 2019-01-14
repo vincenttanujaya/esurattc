@@ -20,6 +20,7 @@ class CreateJenisSurat extends Migration
             $table->string('jenis_surat');
             $table->integer('tampil')->default('1');
             $table->text('isi_surat');
+            $table->integer('komunal')->default('0');
             $table->timestamps();
         });
     }
