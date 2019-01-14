@@ -39,6 +39,7 @@ class JenissuratController extends Controller
     public function tambahjenissurat(Request $request)
     {   
         $atributraw = $request->template;
+        $templatesurat = $request->template;
         $panjang = strlen($atributraw);
         $atributpemohon = [];
         $atributadmin = []; 
@@ -47,9 +48,18 @@ class JenissuratController extends Controller
             if ( $atributraw[$i-1] === "(" && $atributraw[$i-2] === "!" ) {
                 $akhir = stripos($atributraw,")",$i) - $i;
                 $attr = substr($atributraw,$i,$akhir);
+                $tempattr = $attr;
+                while(strpos($tempattr,"<")!==false) {
+                    $tempattr = str_replace(substr($tempattr,strpos($tempattr,"<"),strpos($tempattr,">")-strpos($tempattr,"<")+1),"",$tempattr);
+                    // dd($tempattr);
+                }
+                $templatesurat = str_replace($attr,$tempattr,$templatesurat);
+                $attr = $tempattr;
                 array_push($atributpemohon,$attr);
             }
         }
+        
+        // dd($atributpemohon);
         // Atribut Yang Diisi Admin
         for ($i=0; $i < $panjang; $i++) { 
             if ( $atributraw[$i-1] === "{" && $atributraw[$i-2] === "!" ) {
@@ -59,7 +69,6 @@ class JenissuratController extends Controller
             }
         }
         
-        $templatesurat = $request->template;
         $replacement ="@page {margin: 1in;}";
         if (strpos($templatesurat,"!komunal")!=false) {
             $replacement.='.komunalnya, .komunalnya th, .komunalnya td {border: 1px solid black;border-collapse: collapse;}';
