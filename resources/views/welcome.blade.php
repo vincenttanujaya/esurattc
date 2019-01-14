@@ -24,72 +24,30 @@
     <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<style> 
-    input[type=text], input[type=date]{
-        margin-left: 30%;
-        width: 35%;
-    }
-    img{
-        margin-left: 37%;
-    }
-    #tombol1{
-        margin-left: 45%;
-        width: 10%;
-    }
-    #tombol2{
-        margin-left: 45%;
-        margin-top: -5px;
-        width: 10%;
-        color: #423204;
-    }
-</style>
-<body style="background-color: #023880; height: 400px;">
-
-    <div class="page-center">
-        <div class="page-center-in">
-            <div class="container-fluid">
-                <form>
-                    <div class="container">
-                        <img src="img/logo-surat.png" style="width: 20%">
-                        <br>
-                        <div class="form-group">
-                            <input id="form1" type="date" class="form-control" id="formGroupExampleInput" placeholder="Tanggal Butuh Surat">
-                        </div>
-                        <div class="form-group">
-                            <input id="fomr2" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nama Pemohon">
-                        </div>
-                        <div class="form-group">
-                            <input id="fomr3" type="text" class="form-control" id="formGroupExampleInput2" placeholder="NRP Pemohont">
-                        </div>
-                        <div class="form-group">
-                            <input id="fomr4" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Catatan">
-                        </div>
-                    </div>
-                    <div class="dropdown show">
-                            <a id="tombol1" class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:#0150b4; color: #ffffff;">
-                            Jenis Surat
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+<body style="background-color:#023880">
+    <div class="page-center" >
+        <div class="page-center-in" >
+            <div class="container-fluid" >
+                <form class="sign-box" style="background-color:#023880;border: 0;">
+                    <div class="text-center">
+                        <img src="img/logo-surat.png" style="width: 50%">
                     </div>
                     <br>
-                    <button id="tombol2" type="button" class="btn btn-dark" style="background-color:#f9bc0c;">Lanjutkan</button>
-                    </form>
-                    {{-- <div class="dropdown show">
-                            <a id="tombol1" class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:#0150b4; color: #ffffff;">
-                            Jenis Surat
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="E-Mail"/>
                     </div>
-                    <br>
-                    <button id="tombol2" type="button" class="btn btn-dark" style="background-color:#f9bc0c;">Lanjutkan</button> --}}
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Repeat password"/>
+                    </div>
+                    <button type="submit" class="btn btn-rounded btn-success sign-up">Sign up</button>
+                    <p class="sign-note">Already have an account? <a href="sign-in.html">Sign in</a></p>
+                    <!--<button type="button" class="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>-->
+                </form>
             </div>
         </div>
     </div><!--.page-center-->
