@@ -59,7 +59,7 @@ class JenissuratController extends Controller
             }
         }
         
-        // dd($atributpemohon);
+        dd($atributpemohon);
         // Atribut Yang Diisi Admin
         for ($i=0; $i < $panjang; $i++) { 
             if ( $atributraw[$i-1] === "{" && $atributraw[$i-2] === "!" ) {
