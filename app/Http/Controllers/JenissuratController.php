@@ -247,12 +247,12 @@ class JenissuratController extends Controller
         return view('admin/editjenissurat',compact('pejabat','jenissurat'));
     }
 
-    public function downloada(){
+    public function downloadb(){
         $file = public_path()."/download/templateindividu.docx";
         $headers = array('Content-Type: application/docx',);
         return Response::download($file, 'templateindividu.docx',$headers);
     }
-    public function downloadb(){
+    public function downloada(){
         $file = public_path()."/download/templatekomunal.docx";
         $headers = array('Content-Type: application/docx',);
         return Response::download($file, 'templatekomunal.docx',$headers);
