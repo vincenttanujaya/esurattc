@@ -38,7 +38,7 @@
     </head>
     <body class="with-side-menu wet-aspalt-theme">
     
-        <header class="site-header">
+        <header class="site-header" style="background-color: #023880;border:0;">
             <div class="container-fluid">
                 <a href="#" class="site-logo">
                     <img class="hidden-md-down" src="/img/logoITSPutih.png" alt="">

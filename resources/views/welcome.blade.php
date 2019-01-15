@@ -52,9 +52,6 @@
                         <input type="text" class="form-control" placeholder="NRP Pemohon" name="nrp" required/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Catatan" name="catatan"/>
-                    </div>
-                    <div class="form-group">
                         <select id="exampleSelect" class="form-control" name="id_jenis_surat">
                             @foreach ($jenissurat as $item)
                                 <option value="{{$item->id_jenis_surat}}">{{$item->jenis_surat}}</option>
@@ -62,7 +59,7 @@
                         </select>   
                         <small style="color:white">Hubungi TU jika membutuhkan surat lain</small>         
                     </div>
-                    <button type="submit" class="btn btn-rounded" style="background-color:#f9bc0c; color: #423204;">Lanjutkan</button>
+                    <button type="submit" class="btn btn-rounded" style="background-color:#f9bc0c; color: #423204; border:0;">Lanjutkan</button>
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>-->

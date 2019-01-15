@@ -34,38 +34,37 @@
         <a class="nav-link" href="/" style="color:white;"><b>Ajukan Permohonan</b></a>
     </nav>
     <br><br><br>
-    <div class="box-typical box-typical-padding" style="overflow: auto;">
+    <div class="box-typical box-typical-padding" style="overflow: auto; background-color:#023880; border:0; color:white">
             <div class="row">
                 <div class="col-md-12">
-                    <table id="example" class="display table table-striped table-bordered" 	cellspacing="0" width="100%">
+                    <table id="example" class="display table table-striped table-bordered" 	cellspacing="0" width="100%" style="color:black;">
                         <thead>
                         <tr>
-                            <th>ID Surat</th>
-                            <th>Tanggal Pemohonan Surat</th>
+                            <th>Jenis Surat</th>
                             <th>Nama Pemohon</th>
                             <th>NRP Pemohon</th>
                             <th>Status</th>
-                            
+                            <th>Tanggal Pemohonan Surat</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
                             <th>ID Surat</th>
-                            <th>Tanggal Pemohonan Surat</th>
                             <th>Nama Pemohon</th>
                             <th>NRP Pemohon</th>						
                             <th>Status</th>
+                            <th>Tanggal Pemohonan Surat</th>
                             
                         </tr>
                         </tfoot>
                         <tbody>
                         @foreach ($permintaansurat as $item)
                             <tr>
-                                <td>{{$item->id_permintaan_surat}}</td>
-                                <td>{{$item->created_at}}</td>
+                                <td>{{$item->jenissurat->jenis_surat}}</td>
                                 <td>{{$item->nama_pemohon}}</td>
                                 <td>{{$item->nrp_pemohon}}</td>
                                 <td>{{$item->status_surat}}</td>
+                                <td>{{$item->created_at}}</td>
                             </tr>
                         @endforeach										
                         </tbody>

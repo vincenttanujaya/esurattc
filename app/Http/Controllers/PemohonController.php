@@ -63,7 +63,7 @@ class PemohonController extends Controller
     }
 
     public function cariSurat(){
-        $permintaansurat = \App\permintaansurat::orderby('created_at', 'DESC')->get();
+        $permintaansurat = \App\permintaansurat::with('jenissurat')->orderby('created_at', 'DESC')->get();
         $jenissurat = \App\jenissurat::all();
         return view('/pencarian',  compact('permintaansurat','jenissurat'));
     }

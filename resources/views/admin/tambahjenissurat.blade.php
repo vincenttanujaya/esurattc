@@ -7,7 +7,59 @@
 
 @section('content')
 <div class="box-typical box-typical-padding">
-    <h4>Tambah Jenis Surat<h4>
+    <h4><b>Tambah Template Surat</b><h4>
+    <div class="card">
+        <div class="card-header" style="font-size:17px">
+            <b>Pembuatan Template</b>
+        </div>
+        <div class="card-body">
+            <p class="card-text" style="font-size:17px">Download default template di <a class="btn btn-sm btn-primary" href="/downloada"> Komunal </a> atau <a class="btn btn-sm btn-primary" href="/downloadb"> Individu </a>  </p> 
+            <p class="card-text" style="font-size:17px">Edit file yang sudah di download menggunakan <b>Ms.Word</b> sesuai surat yang di butuhkan dengan ketentuan sebagai berikut:</p>
+            <p class="card-text" style="font-size:17px">- Memanggil Atribut untuk diisi oleh <b>mahasiswa</b> dengan format <b>!(Nama_Atribut)</b>, contoh: !(Nama_Mahasiswa)</p>
+            <p class="card-text" style="font-size:17px">- Memanggil Atribut untuk diisi oleh <b>petugas</b> dengan format <b>!{Nama_Atribut}</b>, contoh: !{tempat_pengesahan}</p>
+            <p class="card-text" style="font-size:17px">- Terdapat <b>atribut khusus</b> yang sudah disediakan oleh sistem.</p>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama Atribut</th>
+                            <th scope="col">Cara Memanggil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <th scope="row">1</th>
+                            <td>Nomor Surat</td>
+                            <td>!nomorsurat</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">2</th>
+                            <td>Tanggal Tanda Tangan</td>
+                            <td>!tanggalttd</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">3</th>
+                            <td>Jabatan</td>
+                            <td>!jabatan</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">4</th>
+                            <td>Nama Pejabat</td>
+                            <td>!pejabat</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">5</th>
+                            <td>NIP Pejabat</td>
+                            <td>!nip</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                <br>
+                <p class="card-text" style="font-size:17px">Jika sudah selesai, silahkan <b>simpan template</b> dalam format <b>webpage</b> (Save As : Web Page)<p>
+                <p class="card-text" style="font-size:17px">Lalu Upload dalam form dibawah, untuk melihat template dalam bentuk pdf, silahkan tekan "Lihat PDF"</p>
+            
+        </div>
+    </div>
     <form action="/tambahjenissurat" method="POST" id="myForm">
         @csrf
         <div class="row">
@@ -97,13 +149,15 @@
 
 @section('dtable')
    <script>
+        var atribut = [];
+    
         document.getElementById('input-file').addEventListener('change', getFile)
         function getFile(event) {
             const input = event.target
             if ('files' in input && input.files.length > 0) {
                 placeFileContent(
                 document.getElementById('content-target'),
-                input.files[0])
+                input.files[0]);
             }
         }
         function placeFileContent(target, file) {
@@ -120,6 +174,17 @@
             })
         }
         function lihatForm(){
+            var atribut = [];
+            var isidokumen = document.getElementById('content-target').value;
+            var panjang = isidokumen.length;
+            for(var i=0;i<panjang;i++){
+                if(isidokumen[i-1]==="(" && isidokumen[i-2]==="!"){
+                    var akhir = isidokumen.indexOf(")",i);
+                    var hehe = isidokumen.substring(i,akhir);
+                    atribut.push(hehe);
+                }
+            }
+            alert( "Jumlah Atribut :" + atribut.length);
             var heheg = document.getElementById('content-target').value;
             document.getElementById('sembunyi').value = heheg;
             // alert(document.getElementsByName('template2').value);

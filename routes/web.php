@@ -18,6 +18,9 @@ Route::post('/tambahpermohonan','PemohonController@tambahPermohonan');
 Route::post('/detailpermohonan','PemohonController@detailPermohonan');
 Route::get('/carisurat', 'PemohonController@cariSurat');
 
+Route::get('/downloada','JenissuratController@downloada');
+Route::get('/downloadb','JenissuratController@downloadb');
+
 Route::get('/testnya', 'HomeController@testhalaman');
 
 Auth::routes();

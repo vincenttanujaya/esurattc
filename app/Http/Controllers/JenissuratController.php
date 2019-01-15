@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App;
-
+use Response;
 use Illuminate\Http\Request;
 use App\jenissurat;
 use App\pejabat;
@@ -245,5 +245,16 @@ class JenissuratController extends Controller
 
         $pejabat = Pejabat::all();
         return view('admin/editjenissurat',compact('pejabat','jenissurat'));
+    }
+
+    public function downloada(){
+        $file = public_path()."/download/templateindividu.docx";
+        $headers = array('Content-Type: application/docx',);
+        return Response::download($file, 'templateindividu.docx',$headers);
+    }
+    public function downloadb(){
+        $file = public_path()."/download/templatekomunal.docx";
+        $headers = array('Content-Type: application/docx',);
+        return Response::download($file, 'templatekomunal.docx',$headers);
     }
 }

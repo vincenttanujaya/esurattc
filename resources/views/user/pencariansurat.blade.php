@@ -61,10 +61,17 @@
 @section('script')
 <script src="js/lib/datatables-net/datatables.min.js"></script>
 <script>
+	$(function() {
+		$('#example').DataTable({
+			"order": [[ 3, "desc" ]]
+		});
+	});
+</script>
+<script>
 		$(function() {
 			$('#example').DataTable({
 				responsive: true
 			});
 		});
-</script>
+	</script>
 @endsection

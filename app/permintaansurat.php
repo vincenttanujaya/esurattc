@@ -16,7 +16,7 @@ class permintaansurat extends Model
     	return $this->belongsTo(jenissurat::class,'id_jenis_surat','id_jenis_surat');
     }
     public function peserta(){
-    	return $this->hasMany(peserta::class);
+    	return $this->hasMany(peserta::class,'id_permintaan_surat','id_permintaan_surat');
     }
     public function detailpermintaansurat(){
     	return $this->hasMany(detailpermintaansurat::class,'id_permintaan_surat','id_permintaan_surat');
