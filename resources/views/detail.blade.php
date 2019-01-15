@@ -34,33 +34,35 @@
     <div class="page-center" >
         <div class="page-center-in" >
             <div class="container-fluid" >
-                <form  class="sign-box" action="/detailpermohonan" method="post" style="background-color:#023880;border: 0;">
+                <form  class="sign-box" action="/tambahpermohonan" method="post" style="background-color:#023880;border: 0;">
                     @csrf
                     <br><br>
                     <div class="text-center">
                         <img src="img/logo-surat.png" style="width: 50%">
                     </div>
                     <br>
+                    <h6 class="m-t-sm with-border" style="color:white"><b>Informasi Pemohon</b></h6>
+				    <input type="hidden" name="jenissurat" value="{{$jenissurat->id_jenis_surat}}">
                     <div class="form-group">
                         <small style="color:white">Tanggal Butuh Surat</small>
-                        <input type="date"class="flatpickr form-control" id="flatpickr" placeholder="Tanggal Butuh Surat" name="tanggalbutuh" required/>
+                    <input type="date"class="flatpickr form-control" id="flatpickr" placeholder="Tanggal Butuh Surat" name="tglbutuh" value="{{$tanggalbutuh}}" required/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nama Pemohon" name="nama" required/>
+                    <input type="text" class="form-control" placeholder="Nama Pemohon" name="nama_p" value="{{$nama}}" required/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="NRP Pemohon" name="nrp" required/>
+                        <input type="text" class="form-control" placeholder="NRP Pemohon" name="nrp_p" value="{{$nrp}}" required/>
                     </div>
+                    <h6 class="m-t-sm with-border" style="color:white"><b>Detail Surat</b></h6>
+                    @foreach ($atribut as $item)
+						<div class="form-group">
+								<input type="hidden" class="form-control" value="{{$item->id_atribut}}" name="idatr[]">
+								<input type="Text" class="form-control" name="valatr[]" placeholder="{{$item->atributsurat->nama_atribut}}" required>
+						</div>
+                    @endforeach
+                    <h6 class="m-t-sm with-border" style="color:white"><b>Informasi Tambahan</b></h6>    
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Catatan" name="catatan"/>
-                    </div>
-                    <div class="form-group">
-                        <select id="exampleSelect" class="form-control" name="id_jenis_surat">
-                            @foreach ($jenissurat as $item)
-                                <option value="{{$item->id_jenis_surat}}">{{$item->jenis_surat}}</option>
-                            @endforeach
-                        </select>   
-                        <small style="color:white">Hubungi TU jika membutuhkan surat lain</small>         
                     </div>
                     <button type="submit" class="btn btn-rounded" style="background-color:#f9bc0c; color: #423204;">Lanjutkan</button>
                     <!--<button type="button" class="close">

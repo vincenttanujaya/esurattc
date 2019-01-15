@@ -11,15 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
 
 /*sisi pemohon*/
-Route::get('/permohonan/{id}','PemohonController@index2');
+Route::get('/','PemohonController@permohonanawal');
 Route::post('/tambahpermohonan','PemohonController@tambahPermohonan');
+Route::post('/detailpermohonan','PemohonController@detailPermohonan');
 Route::get('/carisurat', 'PemohonController@cariSurat');
 
 Route::get('/testnya', 'HomeController@testhalaman');

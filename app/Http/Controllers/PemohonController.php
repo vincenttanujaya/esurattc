@@ -12,19 +12,29 @@ use App\peserta;
 
 class PemohonController extends Controller
 {
-    public function index2($id){
+    public function permohonanawal(){
         $jenissurat = \App\jenissurat::where('tampil',1)->get();
-        $jenissuratid = jenissurat::find($id);
-        $atribut = \App\memilikiatribut::where('id_jenis_surat',$id)->with('atributsurat')->get();
- 		return view('user/pengajuan',  compact('atribut','id', 'jenissurat','jenissuratid'));
+        // dd($jenissurat);
+ 		return view('/welcome',  compact('jenissurat'));
+    }
+
+    public function detailPermohonan(Request $request){
+        $tanggalbutuh = $request->tanggalbutuh;
+        $nama = $request->nama;
+        $nrp = $request->nrp;
+        $jenissurat = jenissurat::find($request->id_jenis_surat);
+        $atribut = \App\memilikiatribut::where('id_jenis_surat',$request->id_jenis_surat)->with('atributsurat')->get();
+        return view('/detail',compact('jenissurat','atribut','tanggalbutuh','nama','nrp'));
     }
 
     public function tambahPermohonan(Request $request){
         $permohonan = new permintaansurat;
+        // dd($request);
         $permohonan->id_jenis_surat = $request->jenissurat;
         $permohonan->tgl_butuh_surat = $request->tglbutuh;
         $permohonan->nama_pemohon = $request->nama_p;
         $permohonan->nrp_pemohon = $request->nrp_p;
+        $permohonan->catatan = $request->catatan;
         $permohonan->save();
 
         $id = $permohonan->id_permintaan_surat;
@@ -55,7 +65,7 @@ class PemohonController extends Controller
     public function cariSurat(){
         $permintaansurat = \App\permintaansurat::orderby('created_at', 'DESC')->get();
         $jenissurat = \App\jenissurat::all();
-        return view('user/pencariansurat',  compact('permintaansurat','jenissurat'));
+        return view('/pencarian',  compact('permintaansurat','jenissurat'));
     }
 
 }
