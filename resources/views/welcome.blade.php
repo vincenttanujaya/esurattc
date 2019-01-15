@@ -34,16 +34,28 @@
                     </div>
                     <br>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="E-Mail"/>
+                        <input type="date" class="form-control" placeholder="Tanggal Butuh Surat"/>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password"/>
+                        <input type="text" class="form-control" placeholder="Nama Pemohon"/>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Repeat password"/>
+                        <input type="text" class="form-control" placeholder="NRP Pemohon"/>
                     </div>
-                    <button type="submit" class="btn btn-rounded btn-success sign-up">Sign up</button>
-                    <p class="sign-note">Already have an account? <a href="sign-in.html">Sign in</a></p>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Catatan"/>
+                     </div>
+                     <div class="dropdown show">
+                            <a id="tombol1" class="btn btn-rounded dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:#0150b4; color: #ffffff;">
+                            Jenis Surat
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                    </div>
+                    <button type="submit" class="btn btn-rounded" style="background-color:#f9bc0c; color: #423204;">Lanjutkan</button>
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>-->
