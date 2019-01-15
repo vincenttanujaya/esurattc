@@ -13,7 +13,7 @@ class jenissurat extends Model
     ];
     
     public function pejabat(){
-        return $this->belongsTo(pejabat::class);
+        return $this->belongsTo(pejabat::class,'id_pejabat','id_pejabat');
 
     }
 

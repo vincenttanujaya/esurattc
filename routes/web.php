@@ -26,7 +26,7 @@ Route::get('/testnya', 'HomeController@testhalaman');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'SuratController@showPermintaan')->name('home');
 
 Route::post('/tambahatribut','AtributsuratController@create');
 Route::post('/tambahatribut2','AtributsuratController@create2');
@@ -47,6 +47,8 @@ Route::post('/tambahjenissurat','JenissuratController@tambahjenissurat');
 Route::post('/lihatjenissurat','JenissuratController@lihatjenissurat');
 Route::get('/ubahkeaktifan/{id}','JenissuratController@ubahkeaktifan');
 Route::get('/lihatform/{id}','JenissuratController@lihatform');
+Route::get('/editjenissurat/{id}','JenissuratController@editjenissurat');
+Route::post('/ubahjenissurat','JenissuratController@ubahjenissurat');
 
 
 Route::get('/surat','SuratController@showPermintaan');

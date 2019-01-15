@@ -38,9 +38,9 @@
                                 <form action="/lihatform/{{$item->id_jenis_surat}}" method="get">
                                     <button type="submit" class="btn btn-inline btn-sm"><i class="fa fa-search"></i> Lihat</button>
                                 </form>
-
-                                    <button type="button" class="btn btn-inline btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</button>
-                                
+                                <form action="/editjenissurat/{{$item->id_jenis_surat}}" method="get">
+                                    <button type="submit" class="btn btn-inline btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</button>
+                                </form>
                                 <form action="/ubahkeaktifan/{{$item->id_jenis_surat}}" method="get">
                                     @if ( $item->tampil == '1' )
                                         <button type="submit" class="btn btn-inline btn-danger btn-sm"data-toggle="modal" data-target="#deleteModal"></i>Non-Aktifkan</button>

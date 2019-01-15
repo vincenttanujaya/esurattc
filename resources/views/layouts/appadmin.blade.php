@@ -76,12 +76,6 @@
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <li class="grey">
-                    <a href="../home">
-                        <i class="font-icon font-icon-dashboard"></i>
-                        <span class="lbl">Home</span>
-                    </a>
-                </li>
-                <li class="grey">
                         <a href="../surat">
                             <i class="font-icon font-icon-mail"></i>
                             <span class="lbl">Permintaan Surat</span>

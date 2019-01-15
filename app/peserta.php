@@ -13,6 +13,6 @@ class peserta extends Model
     ];
 
     public function permintaansurat(){
-    	return $this->belongsTo(permintaansurat::class);
+    	return $this->belongsTo(permintaansurat::class,'id_permintaan_surat','id_permintaan_surat');
     }
 }

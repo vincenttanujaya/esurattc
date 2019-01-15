@@ -14,6 +14,6 @@ class pejabat extends Model
     ];
 
     public function jenissurat(){
-        return $this->hasMany(jenissurat::class);
+        return $this->hasMany(jenissurat::class,'id_pejabat','id_pejabat');
     }
 }
