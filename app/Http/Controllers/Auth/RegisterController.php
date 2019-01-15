@@ -48,13 +48,22 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+            'min' => 'The :attribute field is required.', 
+            'same'    => 'The :attribute and :other must match.',
+            'size'    => 'The :attribute must be exactly :size.',
+            'between' => 'The :attribute value :input is not between :min - :max.',
+            'in'      => 'The :attribute is wrong',
+        ];
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'keyword' => 'required|in:itsinformatikaits',
-        ]);
+        ],$messages);
     }
+
+    
 
     /**
      * Create a new user instance after a valid registration.

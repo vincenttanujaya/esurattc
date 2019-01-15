@@ -36,6 +36,7 @@
                 <div class="container-fluid">
                     <form class="sign-box" method="POST" action="{{ route('register') }}">
                         @csrf
+                        
                         <div class="sign-avatar no-photo">&plus;</div>
                         <header class="sign-title">Register</header>
                         <div class="form-group">
@@ -65,11 +66,15 @@
                                 @endif
                         </div>
                         <div class="form-group">
-                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Password Confirmation" required>
+                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Password Confirmation" required>
                         </div>
                         <div class="form-group">
-                              <input id="keyword" type="password" class="form-control" name="keyword" placeholder="Key Word" required>
+                            <input id="keyword" type="password" class="form-control" name="keyword" placeholder="Key Word" required>
+                            @if ($errors->has('keyword'))
+                              <small style="color:red"><b>  {{ $errors->first('keyword') }} </b> </small>
+                            @endif
                         </div>
+                        
                         <button type="submit" class="btn btn-rounded btn-success sign-up">Register</button>
                         <!--<button type="button" class="close">
                             <span aria-hidden="true">&times;</span>
