@@ -60,6 +60,22 @@
 								<input type="Text" class="form-control" name="valatr[]" placeholder="{{$item->atributsurat->nama_atribut}}" required>
 						</div>
                     @endforeach
+                    
+                    @if ($jenissurat->komunal=="1")
+                        <h6 class="m-t-sm with-border" style="color:white"><b>Peserta</b></h6>    
+                        <small style="color:white">Jumlah Peserta ( Termasuk Pemohon )</small>						
+                        <div class="form-group">
+                            <select onchange="komunal()" class="form-control" id="jumlah">
+                                @for ($i = 0; $i <= 20; $i++)
+                                    <option value="{{$i}}">{{$i}}</option>
+                                @endfor
+                            </select>
+                        </div>
+                        <div id="peserta">
+                                
+                        </div>
+                    @endif
+                    
                     <h6 class="m-t-sm with-border" style="color:white"><b>Informasi Tambahan</b></h6>    
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Catatan" name="catatan"/>
@@ -98,3 +114,13 @@
 <script src="js/app.js"></script>
 </body>
 </html>
+
+<script>
+		function komunal(){
+			var jumlahpeserta = document.getElementById('jumlah').value;
+			document.getElementById('peserta').innerHTML ="";
+			for (var i = 0; i < jumlahpeserta; i++) {
+				document.getElementById('peserta').innerHTML  += '<div class="form-row form-group"><div class="col"><input type="text" class="form-control" placeholder="Nama  ' + (i+1) + '" name="namapeserta[]" required></div><div class="col"><input type="text" class="form-control" placeholder="NRP ' + (i+1) + '" name="nrppeserta[]" required></div></div>' ;
+			}
+		}
+</script>
