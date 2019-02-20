@@ -55,6 +55,7 @@ Route::get('/prosessurat/{id}', 'SuratController@prosessurat')->name('prosessura
 Route::post('/cetaksurat','SuratController@cetaksurat');
 Route::post('/updatestatus/{id}', 'SuratController@updateStatus');
 Route::post('/tolaksurat/{id}', 'SuratController@tolakSurat');
+Route::get('/suratselesai/{id}', 'SuratController@suratselesai');
 
 Route::get('/riwayat','RiwayatController@showRiwayat');
 Route::get('/lihatsuratselesai/{id}','RiwayatController@lihatsurat');

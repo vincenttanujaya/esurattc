@@ -55,10 +55,17 @@
                     </div>
                     <h6 class="m-t-sm with-border" style="color:white"><b>Detail Surat</b></h6>
                     @foreach ($atribut as $item)
-						<div class="form-group">
-								<input type="hidden" class="form-control" value="{{$item->id_atribut}}" name="idatr[]">
-								<input type="Text" class="form-control" name="valatr[]" placeholder="{{$item->atributsurat->nama_atribut}}" required>
-						</div>
+                        @if ( $item->atributsurat->pengisi===0)                      
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" value="{{$item->id_atribut}}" name="idatr[]">
+                                <input type="Text" class="form-control" name="valatr[]" placeholder="{{$item->atributsurat->nama_atribut}}" required>
+                            </div> 
+                        @else
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" value="{{$item->id_atribut}}" name="idatr[]">
+                                <input type="hidden" class="form-control" name="valatr[]" placeholder="{{$item->atributsurat->nama_atribut}}">
+                            </div> 
+                        @endif
                     @endforeach
                     
                     @if ($jenissurat->komunal=="1")

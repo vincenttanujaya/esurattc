@@ -36,7 +36,7 @@ class SuratController extends Controller
         $peserta = peserta::where('id_permintaan_surat',$id)->get();
         $detailsurat = $detail[0];
         $count = $detailsurat->atributsurat->count();
-        // dd($peserta);
+        // dd($detailsurat->catatan);
         return view('admin/prosessurat',compact('detailsurat','count','peserta','jumlahpeserta'));
     }
 
@@ -66,6 +66,7 @@ class SuratController extends Controller
         
         for ($i=0; $i < $count; $i++) { 
             $isisurat = str_ireplace('!('.$request->slugg[$i].')',$request->isi[$i],$isisurat);
+            $isisurat = str_ireplace('!{'.$request->slugg[$i].'}',$request->isi[$i],$isisurat);
         }
         $isisurat = str_ireplace('!namamahasiswa',$detailsurat->nama_pemohon,$isisurat);
         $isisurat = str_ireplace('!nrpmahasiswa',$detailsurat->nrp_pemohon,$isisurat);
@@ -105,6 +106,12 @@ class SuratController extends Controller
     public function tolakSurat(Request $request, $id){
         $status = permintaansurat::find($id);
         $status->status_surat = 'DITOLAK';
+        $status->save();
+        return redirect('/surat');
+    }
+    public function suratselesai($id){
+        $status = permintaansurat::find($id);
+        $status->status_surat = 'SELESAI';
         $status->save();
         return redirect('/surat');
     }

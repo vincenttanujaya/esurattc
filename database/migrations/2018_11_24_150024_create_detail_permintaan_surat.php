@@ -19,7 +19,7 @@ class CreateDetailPermintaanSurat extends Migration
             $table->foreign('id_atribut')->references('id_atribut')->on('atributsurat');
             $table->integer('id_permintaan_surat')->unsigned();
             $table->foreign('id_permintaan_surat')->references('id_permintaan_surat')->on('permintaansurat');
-            $table->string('rincian');
+            $table->string('rincian')->nullable();
             $table->timestamps();
         });
     }

@@ -13,6 +13,14 @@
                         <div class="col-lg-12">
                             <label class="form-label">Nomor Surat</label>
                             <fieldset class="form-group">
+                                <textarea type="text" class="form-control" id="exampleInput" placeholder="Tidak Ada Catatan"  name="nomorsurat" disabled>{{$detailsurat->catatan}}</textarea>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label class="form-label">Nomor Surat</label>
+                            <fieldset class="form-group">
                                 <input type="text" class="form-control" id="exampleInput" placeholder="Nomor Surat" value="{{$detailsurat->no_surat}}" name="nomorsurat" required>
                             </fieldset>
                         </div>

@@ -31,6 +31,7 @@
                                     <td>
                                         <button type="button" onclick="window.location.href='../prosessurat/{{$item->id_permintaan_surat}}'" class="btn btn-success btn-sm">Proses</button>
                                         <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#tolakModal{{$item->id_permintaan_surat}}">Tolak</button>
+                                        <button type="button" onclick="window.location.href='../suratselesai/{{$item->id_permintaan_surat}}'" class="btn btn-primary btn-sm">Selesai</button>
                                     </td>
                                 </tr>
                                 <!--modal buat delete-->
